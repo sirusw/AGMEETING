@@ -6,12 +6,11 @@ import DashboardLayout from "./Component/DashBoard/Layout";
 function App(props) {
     const [list, setList] = useState([]);
     const getList = ()=>{
-        fetch('/api/landing').then((res)=>
+        fetch('/api/test').then((res)=>
             res.json()
         ).then(data=>setList(data)).catch(err=>console.log(err))
     }
     useEffect(()=>{
-        console.log("here");
         getList();
     }, [])
     return (
