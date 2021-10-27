@@ -43,6 +43,26 @@ const routes = [
         ]
 
     },
+    {
+        path: '/landing',
+        element: <Land/>,
+        children: [
+            { index: true, element: <Land /> },
+            {
+                path: '/about',
+                element: <About />,
+            },
+            {
+                path: '/test',
+                element: <Testpg />,
+                // children: [
+                //     { index: true, element: <Testpg/> },
+                // ]
+            },
+            { path: "*", element: <NoMatch /> }
+        ]
+
+    },
     // {
     //     path: '/about',
     //     element: <About />,

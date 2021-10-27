@@ -12,14 +12,19 @@ app.use(express.static("public"));
 app.use(express.static("dist"));
 // app.use(express.static("helper"));
 
-app.get("/", (req, res) => {
+app.get("/api/landing", (req, res) => {
+   var list = ["item1", "item2", "item3"];
+   console.log("sent list");
+   res.json(list);
+});
+
+app.get("*", (req, res) => {
     res.sendFile(HTML_FILE, function (err) {
         if (err) {
             res.status(500).send(err);
         }
     });
 });
-
 
 app.listen(port, () => {
     console.log(`The app server is running on port: ${port}`);
