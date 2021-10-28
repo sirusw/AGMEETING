@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, DefaultRoute } from 'react-router-dom';
 
 import App from './App';
+import DashboardLayout from './Component/DashBoard/Layout';
 import Land from './Land';
 // import "./styles.scss";
 
@@ -11,11 +12,16 @@ const routes = (
     https://reactrouter.com/web/guides/quick-start the documentation for react router is pretty good*/
     <Router>
         <Switch>
-            <Route exact path="/" component={App}/>
+            <Route exact path="/" component={App}>
+            </Route>
+            <Route path="/dashboard" component={DashboardLayout}>
+            </Route>
             <Route path="/landing">
                 {/*what a route renders can also be specified like this, allowing you to pass props etc*/}
                 <Land testProp={"test"}></Land>
             </Route>
+            {/* <Route path='/session'>
+            </Route> */}
         </Switch>
     </Router>
 );
