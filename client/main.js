@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import App from './App';
 import Land from './Land';
+
 // import "./styles.scss";
 
 const routes = (

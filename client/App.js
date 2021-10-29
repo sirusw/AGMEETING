@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import Land from "./Land";
 import Scrollbar from "./Scrollbar";
 import DashboardLayout from "./Component/DashBoard/Layout";
+import Table1 from "./Component/Table1";
+import Agenda from "./Agenda";
 
 function App(props) {
     //Use state hook, used to initialize a state variable for a component, basically some attribute of the component, and a function to set the state of that variable
@@ -28,6 +30,8 @@ function App(props) {
            <h1>No items</h1>}
            {/*pass whatever you want into components using props. These can be functions, strings, numbers, variables whatever you want.*/}
            <Land sayHello={sayHello} anotherProp={"prop2"}></Land>
+           <Agenda></Agenda>
+           <Table1></Table1>
        </div>
     );
 };
