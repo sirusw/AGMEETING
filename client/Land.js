@@ -15,7 +15,7 @@ function Land() {
             <br />
             <br />
             <h1>
-                LANDING PAGE!
+                LANDING PAGE!!!
             </h1>
         </>
     );
