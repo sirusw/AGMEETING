@@ -17,7 +17,7 @@ function Land(props) {
             <br />
             <br />
             <h1>
-                LANDING PAGE!
+                LANDING PAGE!!!
             </h1>
             <h3>
                 {props.anotherProp}
