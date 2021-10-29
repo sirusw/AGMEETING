@@ -1,0 +1,43 @@
+{
+  "name": "agmeeting_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "all": "npm-run-all --parallel dev:*",
+    "dev:build-client": "webpack --config webpack.client.js --watch",
+    "dev:start": "nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ife Ajibola",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^4.12.3",
+    "@mui/material": "^5.0.6",
+    "express": "^4.17.1",
+    "history": "^5.0.1",
+    "html-webpack-plugin": "^5.3.2",
+    "nodemon": "^2.0.13",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-toast": "^2.1.1",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-router": "^6.0.0-beta.8",
+    "react-router-dom": "^6.0.0-beta.8",
+    "stylis-plugin-rtl": "^2.1.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.3.0",
+    "html-loader": "^2.1.2",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.54.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
