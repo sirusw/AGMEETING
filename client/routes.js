@@ -12,16 +12,17 @@ import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
 
 
-// // Declarative routing model
+// // Declarative routing model v5
 // return (
 //     <Router>
 //         <Switch>
 //             <Route exact path="/" component={Land} />
+//             <Route path="/about" component={Land} />
 //         </Switch>
 //     </Router>
 // )
 
-//Programmatic routing model
+//Programmatic routing model v6
 const routes = [
     // { path: '/', element: <Land /> },
     // {
@@ -47,7 +48,7 @@ const routes = [
                 element: <Testpg />,
                 // children: [
                 //     { index: true, element: <Testpg/> },
-                // ]
+                // ]x
             },
             { path: "*", element: <NoMatch /> }
         ]
