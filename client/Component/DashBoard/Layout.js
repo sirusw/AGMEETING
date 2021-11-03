@@ -6,6 +6,8 @@ import { experimentalStyled } from "@mui/material";
 import NavBar from "./NavBar";
 import DashboardSidebar from "./DashboardSidebar";
 import About from "../../About";
+import Interactions from "./Interactions";
+
 
 const DashboardLayoutRoot = experimentalStyled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
@@ -74,7 +76,7 @@ const DashboardLayout = () => {
 
               </Route>
               <Route path="/dashboard/interactions" exact>
-
+                <Interactions />
               </Route>
             </Switch>
           </DashboardLayoutContent>
