@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.3.0",
     "@material-ui/core": "^4.12.3",
     "@mui/material": "^5.0.5",
+    "@mui/x-data-grid": "^4.0.2",
     "date-fns": "^2.25.0",
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.2",
@@ -24,6 +25,8 @@
     "react-dom": "^17.0.2",
     "react-perfect-scrollbar": "^1.5.8",
     "react-router-dom": "^5.3.0",
+    "react-table": "^7.7.0",
+    "sfcookies": "^1.0.2",
     "webpack-merge": "^5.8.0"
   },
   "devDependencies": {

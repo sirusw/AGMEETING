@@ -16,11 +16,29 @@ import {
   Tooltip,
   Typography
 } from '@material-ui/core';
-import React from "react"
+import React from "react";
 import Scrollbar from '../Scrollbar';
-import ChevronRightIcon from '../icons/ChevronRight';
+
+const [state, setState] = React.useState({
+  sortIndicator: "desc",
+});
 
 const now = new Date();
+
+const buttonStyle = {
+  border: 'none', 
+  backgroundColor: 'rgba(0, 0, 0, 0)'
+};
+
+function sortTable(){
+  if (sortIndicator == "asc") {
+    setState = "desc";
+  }
+  else if (sortIndicator == "desc") {
+    setState = "asc";
+  }
+  console.log(sortIndicator);
+};
 
 const orders = [
   {
@@ -126,17 +144,20 @@ const Table1 = () => (
             <TableHead>
               <TableRow>
                 <TableCell sortDirection="desc">
+                <button style={buttonStyle} onClick={sortTable}>
                   <Tooltip
                     enterDelay={300}
                     title="Sort"
                   >
+                  
                     <TableSortLabel
                       active
-                      direction="desc"
+                      direction = {sortIndicator}
                     >
                       Number
                     </TableSortLabel>
                   </Tooltip>
+                  </button>  
                 </TableCell>
                 <TableCell>
                   Customer
@@ -180,9 +201,7 @@ const Table1 = () => (
                       .format(`${order.currency}0,0.00`)}
                   </TableCell>
                   <TableCell>
-                    {/* <Label color={labelColors[order.status]}>
-                      {order.status}
-                    </Label> */}
+                    {order.status}
                   </TableCell>
                   <TableCell align="right">
                     {format(order.createdAt, 'dd MMM, yyyy HH:mm:ss')}
@@ -193,23 +212,6 @@ const Table1 = () => (
           </Table>
         </Box>
       </Scrollbar>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          p: 2
-        }}
-      >
-        <Button
-          color="primary"
-          endIcon={<ChevronRightIcon fontSize="small" />}
-          size="small"
-          sx={{ cursor: 'pointer' }}
-          variant="text"
-        >
-          See All
-        </Button>
-      </Box>
     </Card>
   </Box>
 );
