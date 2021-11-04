@@ -23,6 +23,16 @@ import Testpg from './anothertestpg';
 
 //Programmatic routing model
 const routes = [
+    // { path: '/', element: <Land /> },
+    // {
+    //     path: 'about',
+    //     element: <About />,
+    //     children: [
+    //         {
+    //             path: '/about', element: <NoMatch />
+    //         }
+    //     ]
+    // },
     {
         path: '/',
         element: <DashboardLayout />,
@@ -41,29 +51,10 @@ const routes = [
             },
             { path: "*", element: <NoMatch /> }
         ]
-
     },
-    {
-        path: '/landing',
-        element: <Land/>,
-        children: [
-            { index: true, element: <Land /> },
-            {
-                path: '/about',
-                element: <About />,
-            },
-            {
-                path: '/test',
-                element: <Testpg />,
-                // children: [
-                //     { index: true, element: <Testpg/> },
-                // ]
-            },
-            { path: "*", element: <NoMatch /> }
-        ]
 
-    },
-    // {
+    // },
+    // // {
     //     path: '/about',
     //     element: <About />,
 
