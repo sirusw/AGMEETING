@@ -28,6 +28,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
 import App from './App';
+import Land from './Land';
+
 // import "./styles.scss";
 
 import { StrictMode } from 'react'
