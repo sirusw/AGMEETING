@@ -184,6 +184,16 @@ const sections = [
         icon: <CalendarIcon fontSize="small" />
       }
     ]
+  },
+  {
+    title: 'Tables',
+    items: [
+      {
+        title: 'Table',
+        path: '/dashboard/table',
+        icon: <ClipboardListIcon fontSize="small" />
+      }
+    ]
   }
 ];
 
