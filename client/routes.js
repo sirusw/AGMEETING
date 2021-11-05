@@ -4,7 +4,7 @@ import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 
 import App from './App';
-
+import Table1 from './Component/DashBoard/Tables/Table1'
 import Land from './Land';
 import DashboardLayout from './Component/DashBoard/Layout';
 import About from './About';
@@ -35,20 +35,12 @@ const routes = [
     //     ]
     // },
     {
-        path: '/',
+        path: 'dashboard',
         element: <DashboardLayout />,
         children: [
-            { index: true, element: <Land /> },
             {
-                path: '/about',
-                element: <About />,
-            },
-            {
-                path: '/test',
-                element: <Testpg />,
-                // children: [
-                //     { index: true, element: <Testpg/> },
-                // ]x
+                path: 'table1',
+                element: <Table1 />
             },
             { path: "*", element: <NoMatch /> }
         ]
