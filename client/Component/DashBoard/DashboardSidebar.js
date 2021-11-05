@@ -35,7 +35,7 @@ const sections = [
     items: [
       {
         title: 'Overview',
-        path: '/dashboard',
+        path: '/dashboard/overview',
         icon: <ChartSquareBarIcon fontSize="small" />
       },
       {

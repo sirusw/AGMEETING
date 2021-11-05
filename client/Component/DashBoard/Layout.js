@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Link, Outlet, useRouteMatch, Switch, Route, BrowserRouter } from "react-router-dom";
+import { Link, Outlet, Routes, Route, BrowserRouter } from "react-router-dom";
 import { experimentalStyled } from "@mui/material";
+import {Box} from '@mui/system'
 
 import NavBar from "./NavBar";
 import DashboardSidebar from "./DashboardSidebar";
 import About from "../../About";
-import Interactions from "./Interactions";
+import Session from "../Session";
 
 
 const DashboardLayoutRoot = experimentalStyled("div")(({ theme }) => ({
@@ -43,10 +44,10 @@ const DashboardLayoutContent = experimentalStyled("div")({
 
 const DashboardLayout = () => {
   const [isSidebarMobileOpen, setIsSidebarMobileOpen] = useState(false);
-  let { path, url } = useRouteMatch();
-  useEffect(() => {
-    console.log(path);
-  });
+  // let { path, url } = useRouteMatch();
+  // useEffect(() => {
+  //   console.log(path);
+  // });
 
   return (
     <DashboardLayoutRoot>
@@ -58,27 +59,7 @@ const DashboardLayout = () => {
       <DashboardLayoutWrapper>
         <DashboardLayoutContainer>
           <DashboardLayoutContent>
-            <Switch>
-              <Route path="/dashboard" exact>
-                <div>
-                  <p>Here is home page content</p>
-                </div>
-              </Route>
-              <Route path="/dashboard/session" exact> 
-                <div>
-                  <p>Here is the session information</p>
-                </div>
-              </Route>
-              <Route path="/dashboard/agenda" exact>
-
-              </Route>
-              <Route path="/dashboard/vault" exact>
-
-              </Route>
-              <Route path="/dashboard/interactions" exact>
-                <Interactions />
-              </Route>
-            </Switch>
+           <Outlet></Outlet>
           </DashboardLayoutContent>
         </DashboardLayoutContainer>
       </DashboardLayoutWrapper>
