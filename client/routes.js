@@ -13,6 +13,7 @@ import Testpg from './anothertestpg';
 import Session from './Component/Session';
 import LoadingScreen from './Component/LoadingScreen';
 import Overview from './Component/DashBoard/Overview';
+import Interactions from './Component/DashBoard/Interactions';
 
 // // Declarative routing model
 // return (
@@ -49,7 +50,7 @@ const routes = [
             },
             {
                 path: 'interactions',
-                element: <Testpg />
+                element: <Interactions />
             },
             { path: "*", element: <NoMatch /> }
         ]
