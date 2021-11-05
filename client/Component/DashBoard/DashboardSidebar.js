@@ -189,13 +189,8 @@ const sections = [
     title: 'Tables',
     items: [
       {
-        title: 'Table1',
-        path: '/dashboard/table1',
-        icon: <ClipboardListIcon fontSize="small" />
-      },
-      {
-        title: 'Table2',
-        path: '/dashboard/table2',
+        title: 'Table',
+        path: '/dashboard/table',
         icon: <ClipboardListIcon fontSize="small" />
       }
     ]

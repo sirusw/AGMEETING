@@ -10,6 +10,7 @@ import DashboardLayout from './Component/DashBoard/Layout';
 import About from './About';
 import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
+import Table from './Table'
 
 
 // // Declarative routing model v5
@@ -41,6 +42,13 @@ const routes = [
             {
                 path: 'table1',
                 element: <Table1 />
+            },
+            {
+                path: 'dashboard/table',
+                element: <Table />,
+                // children: [
+                //     { index: true, element: <Testpg/> },
+                // ]x
             },
             { path: "*", element: <NoMatch /> }
         ]
