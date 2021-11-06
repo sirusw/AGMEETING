@@ -13,6 +13,8 @@ import Testpg from './anothertestpg';
 import Session from './Component/Session';
 import LoadingScreen from './Component/LoadingScreen';
 import Overview from './Component/DashBoard/Overview';
+import Agenda from './Agenda';
+import Table1 from './Component/Table1';
 import Interactions from './Component/DashBoard/Interactions';
 
 // // Declarative routing model
@@ -42,7 +44,7 @@ const routes = [
             },
             {
                 path: 'agenda',
-                element: <Testpg />
+                element: <Table1/>
             },
             {
                 path: 'vault',

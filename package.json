@@ -7,7 +7,8 @@
     "all": "npm-run-all --parallel dev:*",
     "dev:build-client": "webpack --config webpack.client.js --watch",
     "dev:start": "nodemon server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "author": "Ife Ajibola",
   "license": "ISC",
@@ -19,7 +20,6 @@
     "date-fns": "^2.25.0",
     "@mui/material": "^5.0.6",
     "apexcharts": "^3.29.0",
-    "date-fns": "^2.25.0",
     "dev-server": "^0.2.0",
     "express": "^4.17.1",
     "history": "^5.0.1",
@@ -46,6 +46,9 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^6.3.0",
     "html-loader": "^2.1.2",
+    "husky": "^7.0.0",
+    "prettier": "2.4.1",
+    "pretty-quick": "^3.1.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.3.0",
     "webpack": "^5.61.0",
