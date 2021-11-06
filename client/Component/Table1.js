@@ -16,7 +16,7 @@ import {
   Tooltip,
   Typography,
 } from "@material-ui/core";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Scrollbar from "../Scrollbar";
 import useSettings from "../hooks/useSettings";
 
@@ -26,7 +26,6 @@ const now = new Date();
 //   border: "none",
 //   backgroundColor: "rgba(0, 0, 0, 0)",
 // };
-
 
 const orders = [
   {
@@ -113,109 +112,109 @@ const Table1 = () => {
   const settings = useSettings();
   const [sortIndicator, setSortIndicator] = useState("desc");
   const [currentOrders, setCurrentOrders] = useState(orders);
-  
+
   function sortTable() {
     if (sortIndicator == "asc") {
       setSortIndicator("desc");
     } else if (sortIndicator == "desc") {
       setSortIndicator("asc");
     }
-
   }
-  
 
-  const sortOrdersByNumber = ()=>{
-
-        let sortedOrders = orders.sort((a, b)=>{
-        if(a.number.split("-")[1] > b.number.split("-")[1]){
-          if(sortIndicator == "desc"){
-            return 1;
-          }else{
-            return -1
-          }
-        }
-        else if(a.number.split("-")[1] < b.number.split("-")[1]){
-          if(sortIndicator == "desc"){
+  const sortOrdersByNumber = () => {
+    let sortedOrders = orders.sort((a, b) => {
+      if (a.number.split("-")[1] > b.number.split("-")[1]) {
+        if (sortIndicator == "desc") {
+          return 1;
+        } else {
           return -1;
-          }else{
-            return 1;
-          }
-        }else{
-          return 0;
         }
-    })
+      } else if (a.number.split("-")[1] < b.number.split("-")[1]) {
+        if (sortIndicator == "desc") {
+          return -1;
+        } else {
+          return 1;
+        }
+      } else {
+        return 0;
+      }
+    });
     setCurrentOrders(sortedOrders);
-  }
+  };
 
-  
-  return(
-  <Box
-    sx={{
-      backgroundColor: "primary",
-      p: 3,
-    }}
-  >
-    <Card>
-      <CardHeader
-        action={
-          <IconButton>
-            {/* <DotsHorizontalIcon fontSize="small" /> */}
-          </IconButton>
-        }
-        title="Latest Orders"
-      />
-      <Divider />
-      <Scrollbar>
-        <Box sx={{ minWidth: 700 }}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell sortDirection="desc">
-                  <Button onClick={()=>{sortTable(); sortOrdersByNumber();}}>
-                    <Tooltip enterDelay={300} title="Sort">
-                      <TableSortLabel active direction={sortIndicator}>
-                        Number
-                      </TableSortLabel>
-                    </Tooltip>
-                  </Button>
-                </TableCell>
-                <TableCell>Customer</TableCell>
-                <TableCell>Items</TableCell>
-                <TableCell>Total</TableCell>
-                <TableCell>Status</TableCell>
-                <TableCell align="right">Date</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {currentOrders.map((order) => {
-              return (
-                <TableRow hover key={order.id}>
-                  <TableCell>
-                    <Typography color="textPrimary" variant="subtitle2">
-                      {order.number}
-                    </Typography>
+  return (
+    <Box
+      sx={{
+        backgroundColor: "primary",
+        p: 3,
+      }}
+    >
+      <Card>
+        <CardHeader
+          action={
+            <IconButton>
+              {/* <DotsHorizontalIcon fontSize="small" /> */}
+            </IconButton>
+          }
+          title="Latest Orders"
+        />
+        <Divider />
+        <Scrollbar>
+          <Box sx={{ minWidth: 700 }}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell sortDirection="desc">
+                    <Button
+                      onClick={() => {
+                        sortTable();
+                        sortOrdersByNumber();
+                      }}
+                    >
+                      <Tooltip enterDelay={300} title="Sort">
+                        <TableSortLabel active direction={sortIndicator}>
+                          Number
+                        </TableSortLabel>
+                      </Tooltip>
+                    </Button>
                   </TableCell>
-                  <TableCell>{order.customer.name}</TableCell>
-                  <TableCell>{order.items}</TableCell>
-                  <TableCell>
-                    {numeral(order.totalAmount).format(
-                      `${order.currency}0,0.00`
-                    )}
-                  </TableCell>
-                  <TableCell>{order.status}</TableCell>
-                  <TableCell align="right">
-                    {format(order.createdAt, "dd MMM, yyyy HH:mm:ss")}
-                  </TableCell>
+                  <TableCell>Customer</TableCell>
+                  <TableCell>Items</TableCell>
+                  <TableCell>Total</TableCell>
+                  <TableCell>Status</TableCell>
+                  <TableCell align="right">Date</TableCell>
                 </TableRow>
-              )
-              })}
-            </TableBody>
-          </Table>
-        </Box>
-      </Scrollbar>
-    </Card>
-  </Box>
-  )
-}
+              </TableHead>
+              <TableBody>
+                {currentOrders.map((order) => {
+                  return (
+                    <TableRow hover key={order.id}>
+                      <TableCell>
+                        <Typography color="textPrimary" variant="subtitle2">
+                          {order.number}
+                        </Typography>
+                      </TableCell>
+                      <TableCell>{order.customer.name}</TableCell>
+                      <TableCell>{order.items}</TableCell>
+                      <TableCell>
+                        {numeral(order.totalAmount).format(
+                          `${order.currency}0,0.00`
+                        )}
+                      </TableCell>
+                      <TableCell>{order.status}</TableCell>
+                      <TableCell align="right">
+                        {format(order.createdAt, "dd MMM, yyyy HH:mm:ss")}
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </Box>
+        </Scrollbar>
+      </Card>
+    </Box>
+  );
+};
 
 export default Table1;
