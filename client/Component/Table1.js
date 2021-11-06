@@ -1,3 +1,11 @@
+
+/*
+
+DEVIAS TEST FILE, NOT USED. PLEASE USE AGENDA.JS LOCATED IN COMPONENT INSTEAD.
+
+*/
+
+
 import { format, subDays, subHours, subMinutes, subSeconds } from 'date-fns';
 import numeral from 'numeral';
 import {
