@@ -11,6 +11,7 @@ import About from './About';
 import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
 import Table from './Table'
+import List from './List'
 
 
 // // Declarative routing model v5
@@ -54,9 +55,10 @@ const routes = [
             {
                 path: 'dashboard/table',
                 element: <Table />,
-                // children: [
-                //     { index: true, element: <Testpg/> },
-                // ]x
+            },
+            {
+                path: 'dashboard/list',
+                element: <List />,
             },
             { path: "*", element: <NoMatch /> }
         ]
