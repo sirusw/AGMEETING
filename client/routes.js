@@ -10,7 +10,8 @@ import DashboardLayout from './Component/DashBoard/Layout';
 import About from './About';
 import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
-import Table from './Table'
+import Table from './Component/DashBoard/Tables/Table'
+import EventDetails from "./Component/DashBoard/Events/EventDetails";
 
 
 // // Declarative routing model v5
@@ -44,11 +45,12 @@ const routes = [
                 element: <Table1 />
             },
             {
-                path: 'dashboard/table',
+                path: 'table',
                 element: <Table />,
-                // children: [
-                //     { index: true, element: <Testpg/> },
-                // ]x
+            },
+            {
+                path: 'event-manage',
+                element: <EventDetails />,
             },
             { path: "*", element: <NoMatch /> }
         ]

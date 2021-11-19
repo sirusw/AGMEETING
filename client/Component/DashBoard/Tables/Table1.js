@@ -27,9 +27,7 @@ export default function Table1() {
     return (
         <Box
             sx={{
-                backgroundColor: 'background.default',
-                minHeight: '100%',
-                py: 8
+                height: 600, width: '100%'
             }}
         >
             <Container maxWidth={settings.compact ? 'xl' : false}>

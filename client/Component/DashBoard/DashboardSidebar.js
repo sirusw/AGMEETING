@@ -192,6 +192,21 @@ const sections = [
         title: 'Table',
         path: '/dashboard/table',
         icon: <ClipboardListIcon fontSize="small" />
+      },
+      {
+        title: 'Table1',
+        path: '/dashboard/table1',
+        icon: <ClipboardListIcon fontSize="small" />
+      }
+    ]
+  },
+  {
+    title: 'Events',
+    items: [
+      {
+        title: 'Event Management',
+        path: '/dashboard/event-manage',
+        icon: <ClipboardListIcon fontSize="small" />
       }
     ]
   }
