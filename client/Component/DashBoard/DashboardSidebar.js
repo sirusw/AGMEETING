@@ -57,6 +57,11 @@ const sections = [
         title: 'Interactions',
         path: '/dashboard/interactions',
         icon: <Users fontSize="small" />
+      },
+      {
+        title: 'Content Message',
+        path: '/dashboard/contentmessage',
+        icon: <ShareIcon fontSize="small" />
       }
     ]
   },
