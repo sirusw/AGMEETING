@@ -17,6 +17,7 @@ import Agenda from "./Component/Agenda";
 import Table1 from "./Component/Table1";
 import Interactions from "./Component/DashBoard/Interactions";
 import Vault from "./Component/Vault";
+import ContentMessage from "./Component/ContentMessage"
 
 // // Declarative routing model
 // return (
@@ -54,6 +55,10 @@ const routes = [
       {
         path: "interactions",
         element: <Interactions />,
+      },
+      {
+        path: "contentmessage",
+        element: <ContentMessage/>,
       },
       { path: "*", element: <NoMatch /> },
     ],
