@@ -33,9 +33,12 @@ const DashboardLayoutContainer = experimentalStyled('div')({
 
 const DashboardLayoutContent = experimentalStyled('div')({
     flex: '1 1 auto',
-    height: '100%',
+    height: '100vh',
+    width: '100vw',
     overflow: 'auto',
     position: 'relative',
+    justifyContent: 'center',
+    alignItems:'center',
     WebkitOverflowScrolling: 'touch'
 });
 

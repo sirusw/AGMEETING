@@ -1,5 +1,6 @@
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import { Box, Card, CardContent } from "@mui/material";
 
 const columns = [
   { field: "id", headerName: "ID", hide: true },
@@ -36,17 +37,28 @@ const rows = [
   { id: 6, item: "{65L", age: 0, type: "35", viewed: null },
 ];
 
-export default function Vault() {
+export default function Vault() {  
   return (
-    <div style={{ display: "flex", height: 400, width: "90%" }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[10]}
-        checkboxSelection
-        disableSelectionOnClick
-      />
-    </div>
+    <Box
+      sx={{
+        backgroundColor: "primary",
+        p: 3,
+      }}
+    >
+      <Card>
+        <CardContent sx={{height: "300px", backgroundColor: "white"}}>
+      {/* <div style={{ display: "flex", height: 400, width: "90%" }}> */}
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={10}
+          rowsPerPageOptions={[10]}
+          checkboxSelection
+          disableSelectionOnClick
+        />
+        </CardContent>
+      {/* </div> */}
+      </Card>
+    </Box>
   );
 }
