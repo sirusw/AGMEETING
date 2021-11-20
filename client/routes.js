@@ -36,30 +36,30 @@ const routes = [
   //     ]
   // },
   {
-    path: "/",
+    path: "dashboard",
     element: <DashboardLayout />,
     children: [
       { index: true, element: <Land /> },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
       },
       {
-        path: "/test",
+        path: "test",
         element: <Testpg />,
         // children: [
         //     { index: true, element: <Testpg/> },
         // ]x
       },
       {
-        path: "dashboard/table",
+        path: "table",
         element: <Table />,
         // children: [
         //     { index: true, element: <Testpg/> },
         // ]x
       },
       {
-        path: "/interactions",
+        path: "interaction",
         element: <InteractionPanel />,
       },
       { path: "*", element: <NoMatch /> },
