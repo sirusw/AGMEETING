@@ -204,10 +204,26 @@ const sections = [
       },
     ],
   },
-        title: 'Table',
-        path: '/dashboard/table',
+      {
+        title: 'Table1',
+        path: '/dashboard/table1',
         icon: <ClipboardListIcon fontSize="small" />
-      },
+      }
+    ]
+  },
+  {
+    title: 'Events',
+    items: [
+      {
+        title: 'Event Management',
+        path: '/dashboard/event-manage',
+        icon: <ClipboardListIcon fontSize="small" />
+      }
+    ]
+  },
+   {
+    title: 'List',
+    items: [
       {
         title: 'List',
         path: '/dashboard/list',

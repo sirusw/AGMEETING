@@ -4,11 +4,14 @@ import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
 
 import App from './App';
+import Table1 from './Component/DashBoard/Tables/Table1'
 import Land from './Land';
 import DashboardLayout from './Component/DashBoard/Layout';
 import About from './About';
 import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
+import Table from './Component/DashBoard/Tables/Table'
+import EventDetails from "./Component/DashBoard/Events/EventDetails";
 import Table from './Table'
 import List from './List'
 import ContentMessage from './ContentMessage';
@@ -41,8 +44,13 @@ const routes = [
         path: 'dashboard',
         element: <DashboardLayout />,
         children: [
-            { index: true, element: <Land /> },
             {
+                path: 'table1',
+                element: <Table1 />
+            },
+            {
+                path: 'event-manage',
+                element: <EventDetails />,
                 path: 'about',
                 element: <About />,
             },
