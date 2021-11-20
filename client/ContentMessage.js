@@ -24,7 +24,6 @@ export default function ContentMessage() {
       sx={{
         marginLeft: '20%', 
         marginTop: '5%',
-        border: '1px solid black',
         width: '100%',
         height: 900
       }}
