@@ -17,6 +17,8 @@ import SettingsDrawer from './SettingsDrawer'
 import { THEMES } from '../config/theme/constants';
 import ErrorBoundary from "./Errorbound";
 import useSettings from "./hooks/useSettings";
+import DashboardLayout from "./Component/DashBoard/Layout";
+import Agenda from "./Component/Agenda";
 
 function App(props) {
 
