@@ -10,6 +10,8 @@ import DashboardLayout from './Component/DashBoard/Layout';
 import About from './About';
 import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
+import Agenda from "./Component/Agenda";
+import Settings from "./Component/GeneralSettings";
 
 
 // // Declarative routing model
@@ -48,6 +50,14 @@ const routes = [
                 // children: [
                 //     { index: true, element: <Testpg/> },
                 // ]
+            },
+            {
+                path: '/agenda',
+                element: <Agenda />,
+            },
+            {
+                path: '/settings',
+                element: <Settings />,
             },
             { path: "*", element: <NoMatch /> }
         ]
