@@ -10,6 +10,8 @@ import DashboardLayout from './Component/DashBoard/Layout';
 import About from './About';
 import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
+import Agenda from "./Component/Agenda";
+import Settings from "./Component/GeneralSettings";
 import Session from './Component/Session';
 import LoadingScreen from './Component/LoadingScreen';
 import Overview from './Component/DashBoard/Overview';
@@ -51,6 +53,14 @@ const routes = [
             {
                 path: 'interactions',
                 element: <Interactions />
+            },
+            {
+                path: '/agenda',
+                element: <Agenda />,
+            },
+            {
+                path: '/settings',
+                element: <Settings />,
             },
             { path: "*", element: <NoMatch /> }
         ]
