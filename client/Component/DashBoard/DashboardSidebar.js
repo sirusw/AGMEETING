@@ -27,6 +27,7 @@ import Logo from '../../Logo';
 import NavSection from '../../NavSection';
 import Scrollbar from '../../Scrollbar';
 import Users from '../../icons/Users';
+import Cog from '../../icons/Cog';
 // import { Receipt } from '@material-ui/icons';
 
 const sections = [
@@ -57,6 +58,11 @@ const sections = [
         title: 'Interactions',
         path: '/dashboard/interactions',
         icon: <Users fontSize="small" />
+      },
+      {
+        title: 'General Settings',
+        path: '/dashboard/settings',
+        icon: <Cog fontSize="small" />
       }
     ]
   },
