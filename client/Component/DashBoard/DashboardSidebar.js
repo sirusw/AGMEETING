@@ -192,6 +192,11 @@ const sections = [
         title: 'Table',
         path: '/dashboard/table',
         icon: <ClipboardListIcon fontSize="small" />
+      },
+      {
+        title: 'List',
+        path: '/dashboard/list',
+        icon: <ClipboardListIcon fontSize="small" />
       }
     ]
   },

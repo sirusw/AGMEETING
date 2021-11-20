@@ -11,9 +11,8 @@ import About from './About';
 import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
 import Table from './Table'
+import List from './List'
 import ContentMessage from './ContentMessage';
-
-
 
 // // Declarative routing model v5
 // return (
@@ -56,6 +55,10 @@ const routes = [
             {
                 path: 'table',
                 element: <Table />,
+            },
+            {
+                path: 'list',
+                element: <List />,
             },
             {
                 path: 'ContentMessage',
