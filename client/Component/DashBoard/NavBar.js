@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { AppBar, Box, IconButton, Toolbar } from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
 import { experimentalStyled } from "@mui/material";
+import useSettings from '../../hooks/useSettings';
 // import MenuIcon from '../../icons/Menu';
 // import AccountPopover from './AccountPopover';
 // import ContactsPopover from './ContactsPopover';
@@ -25,8 +26,19 @@ const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
     zIndex: theme.zIndex.drawer + 100
 }));
 
+const StyledTypography = experimentalStyled(Typography)(({ theme }) => ({
+    ...(theme.palette.mode === 'light' && {
+        color: theme.palette.primary.contrastText
+    }),
+    ...(theme.palette.mode === 'dark' && {
+        color: "#919eab"
+    }),
+    zIndex: theme.zIndex.drawer + 100
+}));
+
 const NavBar = (props) => {
     const { onSidebarMobileOpen, ...other } = props;
+    const {settings} = useSettings();
 
     return (
         <DashboardNavbarRoot {...other}>
@@ -42,7 +54,7 @@ const NavBar = (props) => {
                 >
                     {/* <MenuIcon fontSize="small" /> */}
                 </IconButton>
-                <RouterLink to="/">
+                <RouterLink to="/dashboard">
                     {/* <Logo
             sx={{
               display: {
@@ -53,6 +65,7 @@ const NavBar = (props) => {
               width: 40
             }}
           /> */}
+                <StyledTypography variant="h2">AGMEETING</StyledTypography>
                 </RouterLink>
                 <Box
                     sx={{

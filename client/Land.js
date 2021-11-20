@@ -1,22 +1,30 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import { Outlet } from "react-router";
 import DashboardLayout from "./Component/DashBoard/Layout";
+import { Button, Card, CardContent, Input, TextField, Typography } from "@mui/material";
 
 function Land() {
 
     return (
         <>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <h1>
-                LANDING PAGE!!!
-            </h1>
+            <Typography variant="h2">
+                AGMEETING
+            </Typography>
+            {/* <Link to="/dashboard">
+                dashboard
+            </Link> */}
+            <div>
+                <Card style={{display: 'inline-block'}}>
+                    <CardContent>
+                        <TextField placeholder="Username" fullWidth>
+                        </TextField>
+                        <TextField placeholder="Password" type="password" fullWidth>
+                        </TextField>
+                        <Button href="dashboard">Login</Button>
+                    </CardContent>
+                </Card>
+            </div>
         </>
     );
 };
