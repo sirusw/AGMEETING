@@ -8,8 +8,10 @@ npm install
 
 
 # Starting/Running App:
-npm run build-client
+npm install
 
-npm run dev
+npm run dev:build-client
+
+npm run dev:start
 
 Ife Ajibola – ife@ncra.ca
