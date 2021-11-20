@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d451743d-7249-4a0c-b91e-4a2b21b55c79" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/client/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/App.js" afterDir="false" />
+    <list default="true" id="d451743d-7249-4a0c-b91e-4a2b21b55c79" name="Changes" comment="Add new changes from master repo.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/bundle.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +31,23 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="all" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="all" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.all" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -41,6 +58,9 @@
       <updated>1637284272826</updated>
       <workItem from="1637284274090" duration="93000" />
       <workItem from="1637284421642" duration="64000" />
+      <workItem from="1637284864224" duration="2712000" />
+      <workItem from="1637344968831" duration="512000" />
+      <workItem from="1637361748107" duration="1195000" />
     </task>
     <servers />
   </component>
@@ -58,5 +78,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add new changes from master repo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new changes from master repo." />
   </component>
 </project>
