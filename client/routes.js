@@ -12,7 +12,10 @@ import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
 import Agenda from "./Component/Agenda";
 import Settings from "./Component/GeneralSettings";
-
+import Session from './Component/Session';
+import LoadingScreen from './Component/LoadingScreen';
+import Overview from './Component/DashBoard/Overview';
+import Interactions from './Component/DashBoard/Interactions';
 
 // // Declarative routing model
 // return (
@@ -25,31 +28,31 @@ import Settings from "./Component/GeneralSettings";
 
 //Programmatic routing model
 const routes = [
-    // { path: '/', element: <Land /> },
-    // {
-    //     path: 'about',
-    //     element: <About />,
-    //     children: [
-    //         {
-    //             path: '/about', element: <NoMatch />
-    //         }
-    //     ]
-    // },
+    { path: '/', element: <Land /> },
     {
-        path: '/',
+        path: 'dashboard',
         element: <DashboardLayout />,
         children: [
             { index: true, element: <Land /> },
             {
-                path: '/about',
-                element: <About />,
+                path: 'overview',
+                element: <Overview />,
             },
             {
-                path: '/test',
-                element: <Testpg />,
-                // children: [
-                //     { index: true, element: <Testpg/> },
-                // ]
+                path: 'session',
+                element: <Session />
+            },
+            {
+                path: 'agenda',
+                element: <Testpg />
+            },
+            {
+                path: 'vault',
+                element: <Testpg />
+            },
+            {
+                path: 'interactions',
+                element: <Interactions />
             },
             {
                 path: '/agenda',
@@ -62,6 +65,26 @@ const routes = [
             { path: "*", element: <NoMatch /> }
         ]
     },
+
+    // {
+    //     path: '/dashboard/session',
+    //     element: <Session />,
+    //     children: [
+    //         { index: true, element: <Land /> },
+    //         {
+    //             path: '/about',
+    //             element: <About />,
+    //         },
+    //         // {
+    //         //     path: '/test',
+    //         //     element: <Testpg />,
+    //         //     // children: [
+    //         //     //     { index: true, element: <Testpg/> },
+    //         //     // ]
+    //         // },
+    //         { path: "*", element: <NoMatch /> }
+    //     ]
+    // },
 
     // },
     // // {

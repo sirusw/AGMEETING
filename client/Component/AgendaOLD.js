@@ -35,7 +35,7 @@ function Agenda(props) {
     return (
         /*you can write javascript between curly braces, it will take a bit of getting used to*/
         <>
-            <TableContainer component={Paper}>
+        <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
             <TableRow>

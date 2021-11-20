@@ -19,7 +19,6 @@ import { THEMES } from '../config/theme/constants';
 import ErrorBoundary from "./Errorbound";
 import useSettings from "./hooks/useSettings";
 
-
 function App(props) {
 
     const { settings } = useSettings();
