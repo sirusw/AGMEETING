@@ -12,6 +12,7 @@ import Session from './Component/Session';
 import Interactions from './Component/DashBoard/Interactions';
 import Table1 from "./Component/Table1";
 import Vault from "./Component/Vault";
+import Settings from "./Component/GeneralSettings";
 
 // // Declarative routing model
 // return (
@@ -53,6 +54,10 @@ const routes = [
       {
         path: "interactions",
         element: <Interactions />,
+      },
+      {
+        path: "settings",
+        element: <Settings/>,
       },
       { path: "*", element: <NoMatch /> },
     ],
