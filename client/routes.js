@@ -12,7 +12,6 @@ import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
 import Table from './Component/DashBoard/Tables/Table'
 import EventDetails from "./Component/DashBoard/Events/EventDetails";
-import Table from './Table'
 import List from './List'
 import ContentMessage from './ContentMessage';
 import InteractionPanel from "./Interactions";
@@ -51,8 +50,6 @@ const routes = [
             {
                 path: 'event-manage',
                 element: <EventDetails />,
-                path: 'about',
-                element: <About />,
             },
             {
                 path: 'test',
