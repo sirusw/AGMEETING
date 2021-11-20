@@ -199,7 +199,18 @@ const sections = [
         icon: <ClipboardListIcon fontSize="small" />
       }
     ]
+  },
+  {
+    title: 'Content',
+    items: [
+      {
+        title : 'Content',
+        path: '/dashboard/ContentMessage',
+        icon: <ClipboardListIcon fontSize="small" />
+      }
+    ]
   }
+  
 ];
 
 const DashboardSidebar = (props) => {
