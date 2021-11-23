@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import Routes from "./routes";
 // import routes from './routes'
 import { useRoutes } from "react-router";
+import {connect} from 'react-redux';
 
 
 //Material UI
@@ -18,7 +19,14 @@ import { THEMES } from '../config/theme/constants';
 import ErrorBoundary from "./Errorbound";
 import useSettings from "./hooks/useSettings";
 
-function App(props) {
+
+const mapStateToProps = (state)=>{
+    return{
+        currentUser: state.currentUser
+    }
+}
+
+function App({currentUser}) {
 
     const { settings } = useSettings();
 
@@ -37,6 +45,7 @@ function App(props) {
 
     useEffect(() => {
         console.log('app.js')
+        console.log(currentUser)
     })
 
     return (
@@ -55,4 +64,4 @@ function App(props) {
     );
 };
 
-export default App;
+export default connect(mapStateToProps)(App);
