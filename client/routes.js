@@ -10,7 +10,7 @@ import DashboardLayout from './Component/DashBoard/Layout';
 import NoMatch from './NoMatch';
 import Session from './Component/Session';
 import Interactions from './Component/DashBoard/Interactions';
-import Table1 from "./Component/Table1";
+import Agenda from "./Component/Agenda";
 import Vault from "./Component/Vault";
 import Settings from "./Component/GeneralSettings";
 
@@ -45,7 +45,7 @@ const routes = [
       },
       {
         path: "agenda",
-        element: <Table1 />,
+        element: <Agenda />,
       },
       {
         path: "vault",
