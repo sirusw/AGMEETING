@@ -9,7 +9,7 @@ const initialState ={
 const rootReducer = (state = initialState, action)=> {
     switch(action.type){
         case 'STORE_USER':
-            initialState.currentUser.username=action.payload;
+            initialState.currentUser = action.payload
         default:
             return state;
     }

@@ -215,6 +215,7 @@ const sections = [
 ];
 
 const DashboardSidebar = (props) => {
+  console.log(props.currentUser)
   const { onMobileClose, openMobile } = props;
   const location = useLocation();
   // const { user } = useAuth();
@@ -282,7 +283,7 @@ const DashboardSidebar = (props) => {
                 color="textPrimary"
                 variant="subtitle2"
               >
-                {/* {currentUser.username} */}
+                {props.currentUser.username}
               </Typography>
               <Typography
                 color="textSecondary"
@@ -295,8 +296,8 @@ const DashboardSidebar = (props) => {
                   component={RouterLink}
                   to="/pricing"
                 >
-                  {/* {user.plan} */}You plan....fjkldjskjfkdsjklfj
-                  lorem
+                  
+                  {props.currentUser.username}'s plan
                 </Link>
               </Typography>
             </Box>

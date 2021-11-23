@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 import { Outlet } from "react-router";
@@ -65,7 +65,7 @@ function Land({dispatch, currentUser}) {
               type="password"
               fullWidth
             ></TextField>
-            <Button href="dashboard" onClick={(e)=>onButtonClick(e)}>Login</Button>
+            <Link to="dashboard"><Button onClick={(e)=>onButtonClick(e)}>Login</Button></Link>
             <Button href="create-account" sx={{ display: "block", width:'40%'}}>No account? Create one!</Button>
           </CardContent>
         </Card>
