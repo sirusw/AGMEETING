@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
 import { experimentalStyled } from "@mui/material";
 import useSettings from '../../hooks/useSettings';
-// import MenuIcon from '../../icons/Menu';
+import MenuIcon from '../../icons/Menu';
 // import AccountPopover from './AccountPopover';
 // import ContactsPopover from './ContactsPopover';
 // import ContentSearch from './ContentSearch';
@@ -52,20 +52,20 @@ const NavBar = (props) => {
                         }
                     }}
                 >
-                    {/* <MenuIcon fontSize="small" /> */}
+                    <MenuIcon fontSize="small" />
                 </IconButton>
                 <RouterLink to="/dashboard">
-                    {/* <Logo
-            sx={{
-              display: {
-                lg: 'inline',
-                xs: 'none'
-              },
-              height: 40,
-              width: 40
-            }}
-          /> */}
-                <StyledTypography variant="h2">AGMEETING</StyledTypography>
+                        {/* <Logo
+                    sx={{
+                        display: {
+                        lg: 'inline',
+                        xs: 'none'
+                        },
+                        height: 40,
+                        width: 40
+                    }}
+                    /> */}
+                    <StyledTypography variant="h2">AGMEETING</StyledTypography>
                 </RouterLink>
                 <Box
                     sx={{

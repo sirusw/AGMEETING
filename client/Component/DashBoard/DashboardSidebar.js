@@ -29,16 +29,24 @@ import Scrollbar from '../../Scrollbar';
 import Users from '../../icons/Users';
 import Cog from '../../icons/Cog';
 // import { Receipt } from '@material-ui/icons';
+import {connect} from 'react-redux';
+
+
+const mapStateToProps = (state)=>{
+  return{
+      currentUser: state.currentUser
+  }
+}
 
 const sections = [
   {
     title: 'General',
     items: [
-      {
-        title: 'Overview',
-        path: '/dashboard/overview',
-        icon: <ChartSquareBarIcon fontSize="small" />
-      },
+      // {
+      //   title: 'Overview',
+      //   path: '/dashboard/overview',
+      //   icon: <ChartSquareBarIcon fontSize="small" />
+      // },
       {
         title: 'Session',
         path: '/dashboard/session',
@@ -213,6 +221,7 @@ const DashboardSidebar = (props) => {
   const lgUp = useMediaQuery('(min-width:980px)');
 
   useEffect(() => {
+    console.log('here in sidebar')
     if (openMobile && onMobileClose) {
       onMobileClose();
     }
@@ -273,7 +282,7 @@ const DashboardSidebar = (props) => {
                 color="textPrimary"
                 variant="subtitle2"
               >
-                {/* {user.name} */} User Name
+                {/* {currentUser.username} */}
               </Typography>
               <Typography
                 color="textSecondary"
@@ -380,4 +389,4 @@ DashboardSidebar.propTypes = {
   openMobile: PropTypes.bool
 };
 
-export default DashboardSidebar;
+export default connect(mapStateToProps)(DashboardSidebar);
