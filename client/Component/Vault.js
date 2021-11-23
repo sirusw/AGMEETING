@@ -7,7 +7,7 @@ const columns = [
   { field: "item", headerName: "Item Name (job title)", width: 400 },
   { field: "age", headerName: "Age", width: 150 },
   { field: "type", headerName: "Type", width: 150 },
-  { field: "viewed", headerName: "Viewed", type: "singleSelect", width: 110 },
+  { field: "viewed", headerName: "Viewed", type: "singleSelect", width: 150 },
 ];
 
 const rows = [
