@@ -1,9 +1,4 @@
 import React from "react";
-// import { BrowserRouter as Router, Route, Switch, useRoutes } from 'react-router-dom';
-// import { useRoutes } from 'react-router-dom'; //v5
-import { ThemeProvider } from "@mui/material/styles";
-
-import App from "./App";
 
 import Land from './Land';
 import DashboardLayout from './Component/DashBoard/Layout';
@@ -13,6 +8,10 @@ import Interactions from './Component/DashBoard/Interactions';
 import Table1 from "./Component/Table1";
 import Vault from "./Component/Vault";
 import Settings from "./Component/GeneralSettings";
+import Overview from "./Component/DashBoard/Overview";
+import Welcome from "./Component/Welcome"
+import { Typography } from "@mui/material";
+import CreateAccount from "./Component/CreateAccount";
 
 // // Declarative routing model
 // return (
@@ -24,21 +23,21 @@ import Settings from "./Component/GeneralSettings";
 // )
 
 //Programmatic routing model
-const Welcome = <h1>Welcome To AGMEETING</h1>;
 const routes = [
   { path: "/", element: <Land /> },
+  { path: "/create-account", element: <CreateAccount /> },
   {
     path: "dashboard",
     element: <DashboardLayout />,
     children: [
       {
           path:"",
-          element: Welcome
+          element: <Welcome/>
       },
-    //   {
-    //     path: "overview",
-    //     element: <Overview />,
-    //   },
+      {
+        path: "overview",
+        element: <Overview />,
+      },
       {
         path: "session",
         element: <Session />,
