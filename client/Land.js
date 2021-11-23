@@ -11,6 +11,7 @@ import {
   Input,
   TextField,
   Typography,
+  experimentalStyled
 } from "@mui/material";
 import {connect} from 'react-redux';
 
@@ -20,6 +21,15 @@ const mapStateToProps = (state)=>{
       currentUser: state.currentUser
   }
 }
+
+const StyledTypography =  experimentalStyled(Typography)(({ theme }) => ({
+  ...(theme.palette.mode === 'light' && {
+    color: theme.palette.primary.contrastText
+}),
+...(theme.palette.mode === 'dark' && {
+   color: theme.palette.primary.contrastText
+})
+}))
 
 function Land({dispatch, currentUser}) {
   const [enteredUsername, setEnteredUsername] = useState("")
@@ -43,7 +53,7 @@ function Land({dispatch, currentUser}) {
       style={{ minHeight: "100vh", backgroundColor: "#171C24" }}
     >
       <Grid container direction="column" alignContent="center">
-        <Typography variant="h1">AGMEETING</Typography>
+        <StyledTypography variant="h1">AGMEETING</StyledTypography>
       </Grid>
       <Grid container item direction="column" alignContent="center">
         <Card style={{ display: "inline-block" }}>

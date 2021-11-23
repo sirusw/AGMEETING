@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, styled } from "@mui/system";
 import useSettings from "../hooks/useSettings";
-import { CardContent, Grid, Typography, Card, CardHeader } from "@mui/material";
+import { CardContent, Grid, Typography, Card, CardHeader, experimentalStyled } from "@mui/material";
 
 const sessionItems = [
   {
@@ -26,7 +26,16 @@ const sessionItems = [
   },
 ];
 
-const Session = (props) => {
+const StyledTypography =  experimentalStyled(Typography)(({ theme }) => ({
+  ...(theme.palette.mode === 'light' && {
+    color: theme.palette.primary.contrastText
+}),
+...(theme.palette.mode === 'dark' && {
+   color: theme.palette.primary.contrastText
+})
+}))
+
+const Session = (theme) => {
   const { settings } = useSettings();
   return (
     <Grid container item direction="row" justifyContent="center">
@@ -36,9 +45,9 @@ const Session = (props) => {
         justifyContent="center"
         sx={{ marginBottom: "20px" }}
       >
-        <Typography variant="h2" color="contrastText">
+        <StyledTypography variant="h2">
           Session
-        </Typography>
+        </StyledTypography>
       </Grid>
       <Grid item container direction="column" xs={5}>
         {sessionItems.map((item, key) => (

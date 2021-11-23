@@ -51,6 +51,8 @@ const DashboardLayoutContent = experimentalStyled('div')({
     WebkitOverflowScrolling: 'touch'
 });
 
+
+
 const DashboardLayout = ({currentUser}) => {
   const [isSidebarMobileOpen, setIsSidebarMobileOpen] = useState(false);
   // let { path, url } = useRouteMatch();

@@ -29,7 +29,7 @@ const CreateAccount = (props)=>{
               type="password"
               fullWidth
             ></TextField>
-            <Button href="dashboard" sx={{ display: "block", width: '40%'}}>
+            <Button href="/" sx={{ display: "block", width: '40%'}}>
               Create Account
             </Button>
           </CardContent>

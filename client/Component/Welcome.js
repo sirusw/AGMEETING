@@ -1,11 +1,22 @@
 import React from 'react';
-import { Typography, Grid } from '@mui/material';
+import { Typography, Grid,  experimentalStyled} from '@mui/material';
+
+
+const StyledTypography =  experimentalStyled(Typography)(({ theme }) => ({
+  ...(theme.palette.mode === 'light' && {
+    color: theme.palette.primary.contrastText
+}),
+...(theme.palette.mode === 'dark' && {
+   color: theme.palette.primary.contrastText
+})
+}))
+
 
 const Welcome = ()=>{
     return(
       <Grid item container direction="column" justifyContent='center' alignItems='center'>
-        <Typography variant="h2" sx={{color:"white"}}>Welcome To AGMEETING</Typography>
-        <Typography variant="h3" sx={{color:"white"}} >Click one of the links to be taken to it's page.</Typography>
+        < StyledTypography  variant="h2">Welcome To AGMEETING</ StyledTypography >
+        < StyledTypography variant="h3">Click one of the links to be taken to it's page.</ StyledTypography >
       </Grid>
     )
   } 
