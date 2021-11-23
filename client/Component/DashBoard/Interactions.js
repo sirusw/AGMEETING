@@ -1,24 +1,24 @@
-import { Box, Button } from '@material-ui/core';
+import { Box, Button } from '@mui/material';
 import React from "react";
-import {Grid} from '@material-ui/core';
+import {Grid} from '@mui/material'
+
 
 const Interactions = () => (
   <div>
-    <a href="" > Interactions</a>
     <Box
       sx={{
         backgroundColor: 'background.paper',
         p: 3,
-        width: '50%',
+        width: '90%',
         margin: 'auto'
       }}
     >       
-      <Grid container spacing={1}>
-        <Grid item xs={6}>
+      <Grid container spacing={2} rowSpacing={4}>
+        <Grid item xs={6} >
           <Button
             color="primary"
             size="large"
-            variant="outlined"
+            variant="contained"
             fullWidth
             > Button 
           </Button>
@@ -27,7 +27,7 @@ const Interactions = () => (
           <Button
             color="primary"
             size="large"
-            variant="outlined"
+            variant="contained"
             fullWidth
           >SecondItem
           </Button>
@@ -36,7 +36,7 @@ const Interactions = () => (
           <Button
             color="primary"
             size="large"
-            variant="outlined"
+            variant="contained"
             fullWidth
           >
             Comment For
@@ -46,7 +46,7 @@ const Interactions = () => (
           <Button
             color="primary"
             size="large"
-            variant="outlined"
+            variant="contained"
             fullWidth
           >
             Comment Against
@@ -56,7 +56,7 @@ const Interactions = () => (
           <Button
               color="primary"
               size="large"
-              variant="outlined"
+              variant="contained"
               fullWidth
               >
               Withdraw Comment
@@ -66,7 +66,7 @@ const Interactions = () => (
           <Button
             color="primary"
             size="medium"
-            variant="outlined"
+            variant="contained"
             fullWidth
           >
             Button
@@ -76,7 +76,7 @@ const Interactions = () => (
           <Button
             color="primary"
             size="medium"
-            variant="outlined"
+            variant="contained"
             fullWidth
           >
             Comment Against
@@ -86,7 +86,7 @@ const Interactions = () => (
           <Button
             color="primary"
             size="medium"
-            variant="outlined"
+            variant="contained"
             fullWidth
           >
             Comment Against
@@ -96,7 +96,7 @@ const Interactions = () => (
           <Button
             color="primary"
             size="medium"
-            variant="outlined"
+            variant="contained"
             fullWidth
             >
             Comment Against
@@ -106,7 +106,7 @@ const Interactions = () => (
           <Button
             color="primary"
             size="medium"
-            variant="outlined"
+            variant="contained"
             fullWidth
             >
             Comment Against
@@ -116,7 +116,7 @@ const Interactions = () => (
           <Button
             color="primary"
             size="medium"
-            variant="outlined"
+            variant="contained"
             fullWidth
             >
             Comment Against
