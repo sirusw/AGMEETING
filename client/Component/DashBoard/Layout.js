@@ -8,6 +8,12 @@ import NavBar from "./NavBar";
 import DashboardSidebar from "./DashboardSidebar";
 import About from "../../About";
 import Session from "../Session";
+import {connect} from 'react-redux';
+const mapStateToProps = (state)=>{
+    return{
+        currentUser: state.currentUser
+    }
+}
 
 
 const DashboardLayoutRoot = experimentalStyled("div")(({ theme }) => ({
@@ -45,7 +51,7 @@ const DashboardLayoutContent = experimentalStyled('div')({
     WebkitOverflowScrolling: 'touch'
 });
 
-const DashboardLayout = () => {
+const DashboardLayout = ({currentUser}) => {
   const [isSidebarMobileOpen, setIsSidebarMobileOpen] = useState(false);
   // let { path, url } = useRouteMatch();
   // useEffect(() => {
@@ -70,4 +76,4 @@ const DashboardLayout = () => {
   );
 };
 
-export default DashboardLayout;
+export default connect(mapStateToProps)(DashboardLayout);

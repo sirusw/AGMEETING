@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import { useState } from "react";
 import { Outlet } from "react-router";
 import DashboardLayout from "./Component/DashBoard/Layout";
 import {
@@ -11,8 +12,27 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import {connect} from 'react-redux';
 
-function Land() {
+
+const mapStateToProps = (state)=>{
+  return{
+      currentUser: state.currentUser
+  }
+}
+
+function Land({dispatch, currentUser}) {
+  const [enteredUsername, setEnteredUsername] = useState("")
+  
+
+  const onButtonClick = async (e)=>{
+    console.log(currentUser)
+    dispatch({
+      type: "STORE_USER",
+      payload: {username: enteredUsername}
+    })
+    console.log(currentUser)
+  }
   return (
     <Grid
       container
@@ -28,16 +48,14 @@ function Land() {
       <Grid container item direction="column" alignContent="center">
         <Card style={{ display: "inline-block" }}>
           <CardContent>
-            <TextField placeholder="Username" fullWidth></TextField>
+            <TextField placeholder="Username" fullWidth onChange={(e)=>{setEnteredUsername(e.target.value)}}></TextField>
             <TextField
               placeholder="Password"
               type="password"
               fullWidth
             ></TextField>
-            <Button href="dashboard">Login</Button>
-            <Button href="create-account" sx={{ display: "block", width:'40%'}}>
-              No account? Create one!
-            </Button>
+            <Button href="dashboard" onClick={(e)=>onButtonClick(e)}>Login</Button>
+            <Button href="create-account" sx={{ display: "block", width:'40%'}}>No account? Create one!</Button>
           </CardContent>
         </Card>
       </Grid>
@@ -45,4 +63,4 @@ function Land() {
   );
 }
 
-export default Land;
+export default connect(mapStateToProps)(Land);

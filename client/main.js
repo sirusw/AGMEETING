@@ -6,6 +6,9 @@ import App from './App';
 import Land from './Land';
 import "../public/theme/styles.css";
 
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 // import "./styles.scss";
 
 import { StrictMode } from 'react'
@@ -14,6 +17,7 @@ import { SettingsProvider } from './contexts/SettingsContext';
 import { StyledEngineProvider } from '@mui/styled-engine';
 
 ReactDOM.render(
+    <Provider store={store}>
     <StyledEngineProvider injectFirst>
         <SettingsProvider>
             <BrowserRouter>
@@ -21,4 +25,5 @@ ReactDOM.render(
             </BrowserRouter>
         </SettingsProvider>
     </StyledEngineProvider>
+    </Provider>
     , document.getElementById("root"));
