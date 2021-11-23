@@ -13,6 +13,7 @@ import Interactions from './Component/DashBoard/Interactions';
 import Table1 from "./Component/Table1";
 import Vault from "./Component/Vault";
 import Settings from "./Component/GeneralSettings";
+import ContentMessgae from "./Component/ContentMessage"
 
 // // Declarative routing model
 // return (
@@ -58,6 +59,10 @@ const routes = [
       {
         path: "settings",
         element: <Settings/>,
+      },
+      {
+        path: "contentmessage",
+        element: <ContentMessgae/>,
       },
       { path: "*", element: <NoMatch /> },
     ],
