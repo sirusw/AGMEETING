@@ -1,5 +1,17 @@
 import React from "react";
-import {Grid, Typography, Card, CardContent, TextField, Button} from '@mui/material'
+import {Grid, Typography, Card, CardContent, TextField, Button, experimentalStyled} from '@mui/material'
+
+
+
+const StyledTypography =  experimentalStyled(Typography)(({ theme }) => ({
+  ...(theme.palette.mode === 'light' && {
+    color: theme.palette.primary.dark
+}),
+...(theme.palette.mode === 'dark' && {
+   color: theme.palette.primary.light
+})
+}))
+
  
 const CreateAccount = (props)=>{
     return(
@@ -12,7 +24,7 @@ const CreateAccount = (props)=>{
       style={{ minHeight: "100vh", backgroundColor: "#171C24" }}
     >
       <Grid container direction="column" alignContent="center">
-        <Typography variant="h1">AGMEETING</Typography>
+        <StyledTypography variant="h1">AGMEETING</StyledTypography>
       </Grid>
       <Grid container item direction="column" alignContent="center">
         <Card style={{ display: "inline-block" }}>
