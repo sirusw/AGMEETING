@@ -12,6 +12,7 @@ import Overview from "./Component/DashBoard/Overview";
 import Welcome from "./Component/Welcome"
 import { Typography } from "@mui/material";
 import CreateAccount from "./Component/CreateAccount";
+import ContentMessgae from "./Component/ContentMessage"
 
 // // Declarative routing model
 // return (
@@ -57,6 +58,10 @@ const routes = [
       {
         path: "settings",
         element: <Settings/>,
+      },
+      {
+        path: "contentmessage",
+        element: <ContentMessgae/>,
       },
       { path: "*", element: <NoMatch /> },
     ],

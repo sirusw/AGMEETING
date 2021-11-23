@@ -1,7 +1,7 @@
-import {Button, Box, TextField, FormControl, InputLabel, Select, MenuItem, Grid} from '@material-ui/core';
+import {Button, Box, TextField, FormControl, InputLabel, Select, MenuItem, Grid} from '@mui/material';
 import React from "react";
 //import {Grid} from '@material-ui/core';
-
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 
 const ContentMessage = () => (
     <div>
@@ -9,7 +9,7 @@ const ContentMessage = () => (
         sx={{
             backgroundColor: 'background.paper',
             p: 3,
-            width: '50%',
+            width: '90%',
             margin: 'auto'
         }}
         >   
@@ -36,7 +36,7 @@ const ContentMessage = () => (
                     variant="outlined" />
                 </Grid>
                 <Grid item xs={4}>
-                    <FormControl sx={{ m: 1}} fullWidth>
+                    <FormControl sx={{}} fullWidth>
                         <InputLabel id="input">Destination</InputLabel>
                         <Select
                         labelId="inputlab"
@@ -45,32 +45,33 @@ const ContentMessage = () => (
                         label="Destination"
                         //onChange={handleChange}
                         >
-                            <MenuItem value={''}>Option 1</MenuItem>
-                            <MenuItem value={''}>Option 2</MenuItem>
-                            <MenuItem value={''}>Option 3</MenuItem>
+                            <MenuItem value={1}>Option 1</MenuItem>
+                            <MenuItem value={2}>Option 2</MenuItem>
+                            <MenuItem value={3}>Option 3</MenuItem>
                         </Select>
                     </FormControl>
                    
                 </Grid>
                 <Grid item xs={4}>
                     <Button
-                    
-                    color="primary"
                     size="large"
-                    variant="outlined"
+                    color="primary"
+                    variant="contained"
                     fullWidth
+                    sx={{ mt: 1 }}
                     >Attachment
                     </Button>
                 </Grid>
                 <Grid item xs={4}>
                     <Button
-                    color="primary"
-                    size="large"
-                    variant="outlined"
-                    fullWidth
+                        size="large"
+                        color="primary"
+                        variant="contained"
+                        fullWidth
+                        sx={{ mt: 1 }}
                     >Post Message
                     </Button>
-                    
+                   
                 </Grid>
             </Grid>
         </Box>

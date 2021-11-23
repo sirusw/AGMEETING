@@ -68,6 +68,11 @@ const sections = [
         icon: <Users fontSize="small" />
       },
       {
+        title: 'Content Message',
+        path: '/dashboard/contentmessage',
+        icon: <BriefcaseIcon fontSize="small" />
+      },
+      {
         title: 'General Settings',
         path: '/dashboard/settings',
         icon: <Cog fontSize="small" />

@@ -4,58 +4,65 @@ import { Box, Card, CardContent } from "@mui/material";
 
 const columns = [
   { field: "id", headerName: "ID", hide: true },
-  { field: "item", headerName: "Item Name (job title)", width: 400 },
-  { field: "age", headerName: "Age", width: 150 },
-  { field: "type", headerName: "Type", width: 150 },
-  { field: "viewed", headerName: "Viewed", type: "singleSelect", width: 110 },
+  { field: "item", headerName: "Item Name (job title)", width: 250 },
+  { field: "example", headerName: "Example", width: 150 },
+  { field: "status", headerName: "Status", width: 110 },
+  { field: "placeholder", headerName: "placeholder", type: "singleSelect", width: 110 },
+  { field: "email", headerName: "Email", width: 150 }
 ];
 
 const rows = [
   {
     id: 1,
     item: "Giacomo Guilizzoni Founder & CEO",
-    age: 40,
-    type: "Peldi",
-    viewed: null,
+    example: 40,
+    status: "Peldi",
+    placeholder: null,
+    email: null,
   },
   { 
     id: 2, 
     item: "Marco Botton Tuttofare", 
-    age: 38, 
-    type: null, 
-    viewed: null 
+    example: 38, 
+    status: null, 
+    placeholder: null,
+    email: null,
   },
   {
     id: 3,
     item: "Mariah Maclachlan Better Half",
-    age: 41,
-    type: "Patata",
-    viewed: null,
+    example: 41,
+    status: "Patata",
+    placeholder: null,
+    email: null,
   },
   {
     id: 4,
     item: "Valerie Liberty Head Chef",
-    age: 70,
-    type: "Val",
-    viewed: null,
+    example: 70,
+    status: "Val",
+    placeholder: null,
+    email: null,
   },
   { 
     id: 5, 
     item: "Data Grid Documents", 
-    age: null, 
-    type: null, 
-    viewed: null 
+    example: null, 
+    status: null, 
+    placeholder: null,
+    email: null, 
   },
   { 
     id: 6, 
     item: "{65L", 
-    age: 0, 
-    type: "35", 
-    viewed: null 
+    example: 0, 
+    status: "35", 
+    placeholder: null,
+    email: null, 
   },
 ];
 
-export default function Vault() {
+export default function RegisteredUsers() {
   return (  
     <div style={{ display: 'flex', height: 400, width: '90%' }}>
       <DataGrid
