@@ -54,7 +54,7 @@ const DashboardLayout = () => {
 
   return (
     <DashboardLayoutRoot>
-      <NavBar onSidebarMobileOpen={() => setIsSidebarMobileOpen(true)} />
+      <NavBar onSidebarMobileOpen={() => setIsSidebarMobileOpen(!isSidebarMobileOpen)} />
       <DashboardSidebar
         onMobileClose={() => setIsSidebarMobileOpen(false)}
         openMobile={isSidebarMobileOpen}
