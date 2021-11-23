@@ -1,6 +1,7 @@
 import React from "react";
 import Scrollbar from '../Scrollbar';
 import { DataGrid } from '@mui/x-data-grid';
+import Box from '@mui/material/Box';
 
 /*
 Gave up on trying to implement sorting myself, much easier solution was to just
@@ -30,7 +31,7 @@ const rows = [
 
 export default function Agenda() {
   return (  
-    <div style={{ display: 'flex', height: 400, width: '90%' }}>
+    <Box bgcolor="rgb(255,255,255)" sx={{ display: 'flex', width: "95%", height: 400, borderRadius: 0.4 }}>
       <DataGrid
         rows={rows}
         columns={columns}
@@ -39,6 +40,6 @@ export default function Agenda() {
         checkboxSelection
         disableSelectionOnClick
       />
-    </div>
+    </Box>
   );
 }
