@@ -28,10 +28,10 @@ const sessionItems = [
 
 const StyledTypography =  experimentalStyled(Typography)(({ theme }) => ({
   ...(theme.palette.mode === 'light' && {
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.dark
 }),
 ...(theme.palette.mode === 'dark' && {
-   color: theme.palette.primary.contrastText
+   color: theme.palette.primary.light
 })
 }))
 

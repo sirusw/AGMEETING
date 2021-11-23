@@ -25,13 +25,14 @@ const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
     }),
     zIndex: theme.zIndex.drawer + 100
 }));
+  
 
 const StyledTypography = experimentalStyled(Typography)(({ theme }) => ({
     ...(theme.palette.mode === 'light' && {
-        color: theme.palette.primary.contrastText
+        color: theme.palette.primary.dark
     }),
     ...(theme.palette.mode === 'dark' && {
-        color: "#919eab"
+       color: theme.palette.primary.light
     }),
     zIndex: theme.zIndex.drawer + 100
 }));
