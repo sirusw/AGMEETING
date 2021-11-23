@@ -34,10 +34,10 @@ const routes = [
           path:"",
           element: <Welcome/>
       },
-      {
-        path: "overview",
-        element: <Overview />,
-      },
+      // {
+      //   path: "overview",
+      //   element: <Overview />,
+      // },
       {
         path: "session",
         element: <Session />,

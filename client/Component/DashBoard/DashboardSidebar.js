@@ -34,11 +34,11 @@ const sections = [
   {
     title: 'General',
     items: [
-      {
-        title: 'Overview',
-        path: '/dashboard/overview',
-        icon: <ChartSquareBarIcon fontSize="small" />
-      },
+      // {
+      //   title: 'Overview',
+      //   path: '/dashboard/overview',
+      //   icon: <ChartSquareBarIcon fontSize="small" />
+      // },
       {
         title: 'Session',
         path: '/dashboard/session',
