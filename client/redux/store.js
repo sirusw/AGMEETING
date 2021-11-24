@@ -1,18 +1,11 @@
 import { createStore } from "redux";
+import userReducer from "./reducers"
 
 const initialState ={
+    userList:{},
     currentUser:{
         username: ""
     }
 }
 
-const rootReducer = (state = initialState, action)=> {
-    switch(action.type){
-        case 'STORE_USER':
-            initialState.currentUser = action.payload
-        default:
-            return state;
-    }
-};
-
-export default createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+export default createStore(userReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
