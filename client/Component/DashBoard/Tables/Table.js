@@ -42,7 +42,7 @@ const columns = [
 function Table() {
     return (
         
-        <div style={{ height: 900, width: '100%' }}>
+        <div style={{ height: 600, width: '100%' }}>
       <DataGrid style={{ height: '100%', width: '100%' }}
         rowHeight={80}
         rows={rows}
