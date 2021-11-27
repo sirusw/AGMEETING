@@ -19,37 +19,92 @@ export default function InteractionPanel() {
       </Typography>
       <Grid container spacing={1}>
         <Grid item xs={6}>
-          <Button variant="contained">Button</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Button
+          </Button>
         </Grid>
         <Grid item xs={6}>
-          <Button variant="contained">Second Item</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Second Item
+          </Button>
         </Grid>
         <Grid item xs={6}>
-          <Button variant="contained">Comment FOR</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Comment FOR
+          </Button>
         </Grid>
         <Grid item xs={6}>
-          <Button variant="contained">Comment AGAINST</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Comment AGAINST
+          </Button>
         </Grid>
         <Grid item xs={12}>
-          <Button variant="contained">Withdraw Comment</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Withdraw Comment
+          </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button variant="contained">Button</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Button
+          </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button variant="contained">Comment AGAINST</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Comment AGAINST
+          </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button variant="contained">Comment AGAINST</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Comment AGAINST
+          </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button variant="contained">Comment AGAINST</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Comment AGAINST
+          </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button variant="contained">Comment AGAINST</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Comment AGAINST
+          </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button variant="contained">Comment AGAINST</Button>
+          <Button
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            variant="contained"
+          >
+            Comment AGAINST
+          </Button>
         </Grid>
       </Grid>
     </Box>
