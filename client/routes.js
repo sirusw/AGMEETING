@@ -1,4 +1,5 @@
 import React from "react";
+import { Suspense, lazy } from 'react';
 // import { BrowserRouter as Router, Route, Switch, useRoutes } from 'react-router-dom';
 // import { useRoutes } from 'react-router-dom'; //v5
 import { ThemeProvider } from "@mui/material/styles";
@@ -17,6 +18,7 @@ import ContentMessage from './ContentMessage';
 import InteractionPanel from "./Interactions";
 import Login from "./Login";
 import Docs from "./Component/DashBoard/Documentations/Docs";
+import SignIn from "./login/signin";
 
 
 // // Declarative routing model v5
@@ -41,6 +43,19 @@ const routes = [
                 path: '/about', element: <NoMatch />
             }
         ]
+    // {
+    //     path: 'about',
+    //     element: <About />,
+    //     children: [
+    //         {
+    //             path: '/about', element: <NoMatch />
+    //         }
+    //     ]
+    // },
+
+    {
+        path: 'signin',
+        element: <SignIn />
     },
     {
         path: 'dashboard',
@@ -79,6 +94,10 @@ const routes = [
             },
             { path: "*", element: <NoMatch /> }
         ]
+    },
+    {
+        path: '/',
+        element: <DashboardLayout />
     },
 
     // },
