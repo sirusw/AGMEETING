@@ -15,6 +15,8 @@ import EventDetails from "./Component/DashBoard/Events/EventDetails";
 import List from './List'
 import ContentMessage from './ContentMessage';
 import InteractionPanel from "./Interactions";
+import Login from "./Login";
+import Docs from "./Component/DashBoard/Documentations/Docs";
 
 
 // // Declarative routing model v5
@@ -29,16 +31,17 @@ import InteractionPanel from "./Interactions";
 
 //Programmatic routing model v6
 const routes = [
-    // { path: '/', element: <Land /> },
-    // {
-    //     path: 'about',
-    //     element: <About />,
-    //     children: [
-    //         {
-    //             path: '/about', element: <NoMatch />
-    //         }
-    //     ]
-    // },
+    { path: '/', element: <Login /> },
+    { path: 'docs', element: <Docs /> },
+    {
+        path: 'about',
+        element: <About />,
+        children: [
+            {
+                path: '/about', element: <NoMatch />
+            }
+        ]
+    },
     {
         path: 'dashboard',
         element: <DashboardLayout />,
