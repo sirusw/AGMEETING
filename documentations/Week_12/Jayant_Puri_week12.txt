@@ -6,10 +6,10 @@ Week 12 tasks completed:
 - Participated in a think aloud session on friday on ethics dashboard project.
 - created a list of tasks for user to complete in the peer testing.
 - created a questionare for the participant to fill out in order to receive feedback on the 
-project so far.
+  project so far.
 - Scheduled a meeting with a peer next week for a user feedback session. (As he wasn't available this week)
 - Made a video demoof the project for the peer testing
 - created a pdf report for pdf testing.
-- Had a team meeting for this week's gitstat report and to plan for the final report for peer testing
+- Had a team meeting for this week's gitstat report and to plan for the final report for peer testing.
 
  
