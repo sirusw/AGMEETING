@@ -16,6 +16,8 @@ import EventDetails from "./Component/DashBoard/Events/EventDetails";
 import List from './List'
 import ContentMessage from './ContentMessage';
 import InteractionPanel from "./Interactions";
+import Login from "./Login";
+import Docs from "./Component/DashBoard/Documentations/Docs";
 import SignIn from "./login/signin";
 
 
@@ -31,6 +33,16 @@ import SignIn from "./login/signin";
 
 //Programmatic routing model v6
 const routes = [
+    { path: '/', element: <Login /> },
+    { path: 'docs', element: <Docs /> },
+    {
+        path: 'about',
+        element: <About />,
+        children: [
+            {
+                path: '/about', element: <NoMatch />
+            }
+        ]
     // {
     //     path: 'about',
     //     element: <About />,
