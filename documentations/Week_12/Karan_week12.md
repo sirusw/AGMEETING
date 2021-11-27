@@ -2,6 +2,7 @@
 
 - Fixed the interaction panel styling
 - Make document and prepare for peer testing
+- conduct the peer testing session
 
 # Week 13
 
