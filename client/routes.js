@@ -1,4 +1,5 @@
 import React from "react";
+import { Suspense, lazy } from 'react';
 // import { BrowserRouter as Router, Route, Switch, useRoutes } from 'react-router-dom';
 // import { useRoutes } from 'react-router-dom'; //v5
 import { ThemeProvider } from "@mui/material/styles";
@@ -15,6 +16,7 @@ import EventDetails from "./Component/DashBoard/Events/EventDetails";
 import List from './List'
 import ContentMessage from './ContentMessage';
 import InteractionPanel from "./Interactions";
+import SignIn from "./login/signin";
 
 
 // // Declarative routing model v5
@@ -29,7 +31,6 @@ import InteractionPanel from "./Interactions";
 
 //Programmatic routing model v6
 const routes = [
-    // { path: '/', element: <Land /> },
     // {
     //     path: 'about',
     //     element: <About />,
@@ -39,6 +40,11 @@ const routes = [
     //         }
     //     ]
     // },
+
+    {
+        path: 'signin',
+        element: <SignIn />
+    },
     {
         path: 'dashboard',
         element: <DashboardLayout />,
@@ -76,6 +82,10 @@ const routes = [
             },
             { path: "*", element: <NoMatch /> }
         ]
+    },
+    {
+        path: '/',
+        element: <DashboardLayout />
     },
 
     // },
