@@ -1,18 +1,22 @@
 import React from "react";
 
-import Land from './Land';
+//Layout
 import DashboardLayout from './Component/DashBoard/Layout';
+
+//Session Components
+import Land from './Land';
+import GroupedList3 from './Component/Session/Session';
+import Agenda from './Component/Agenda/agenda'
+import Vault from './Component/Vault/vault'
+
+import About from './About';
 import NoMatch from './NoMatch';
-import Session from './Component/Session';
-import Interactions from './Component/DashBoard/Interactions';
-import Agenda from "./Component/Agenda";
-import Vault from "./Component/Vault";
-import Settings from "./Component/GeneralSettings";
-import Overview from "./Component/DashBoard/Overview";
-import Welcome from "./Component/Welcome"
-import { Typography } from "@mui/material";
-import CreateAccount from "./Component/CreateAccount";
-import ContentMessgae from "./Component/ContentMessage"
+import Testpg from './anothertestpg';
+
+import LoggedinUsers from './Component/AdminComponents/LoggedInUsers';
+import RegisteredUsers from './Component/AdminComponents/RegisteredUsers';
+import Stats from './Component/AdminComponents/Stats/Stats';
+import Settings from './Component/AdminComponents/Settings/Settings'
 
 // // Declarative routing model
 // return (
@@ -25,47 +29,76 @@ import ContentMessgae from "./Component/ContentMessage"
 
 //Programmatic routing model
 const routes = [
-  { path: "/", element: <Land /> },
-  { path: "/create-account", element: <CreateAccount /> },
-  {
-    path: "dashboard",
-    element: <DashboardLayout />,
-    children: [
-      {
-          path:"",
-          element: <Welcome/>
-      },
-      // {
-      //   path: "overview",
-      //   element: <Overview />,
-      // },
-      {
-        path: "session",
-        element: <Session />,
-      },
-      {
-        path: "agenda",
-        element: <Agenda />,
-      },
-      {
-        path: "vault",
-        element: <Vault />,
-      },
-      {
-        path: "interactions",
-        element: <Interactions />,
-      },
-      {
-        path: "settings",
-        element: <Settings/>,
-      },
-      {
-        path: "contentmessage",
-        element: <ContentMessgae/>,
-      },
-      { path: "*", element: <NoMatch /> },
-    ],
-  },
+    // { path: '/', element: <Land /> },
+    // {
+    //     path: 'about',
+    //     element: <About />,
+    //     children: [
+    //         {
+    //             path: '/about', element: <NoMatch />
+    //         }
+    //     ]
+    // },
+    {
+        path: '/',
+        element: <DashboardLayout />,
+        children: [
+            { index: true, element: <GroupedList3 /> },
+            {
+                path: '/agenda',
+                element: <Agenda />,
+            },
+            // {
+            //     path: ''
+            // },
+            {
+                path: '/vault',
+                element: <Vault />,
+                // children: [
+                //     { index: true, element: <Testpg/> },
+                // ]x
+            },
+            {
+                path: '/loggedinUsers',
+                element: <LoggedinUsers />
+            },
+            {
+                path: '/registeredusers',
+                element: <RegisteredUsers />
+            },
+            {
+                path: '/stats',
+                element: <Stats />
+            },
+            {
+                path: '/settings',
+                element: <Settings />
+            },
+            { path: "*", element: <NoMatch /> }
+        ]
+    },
+
+    // },
+    // // {
+    //     path: '/about',
+    //     element: <About />,
+
+    //     children: [
+    //         { index: true, element: <Testpg /> },
+    //         {
+    //             path: '/about',
+    //             element: <About />,
+    //             children: [
+    //                 { index: true, element: <About /> },
+    //             ]
+    //         },
+    //         { path: "*", element: <NoMatch /> }
+    //     ]
+
+    // },
+
+
+    { path: "*", element: <NoMatch /> }
 
   { path: "*", element: <NoMatch /> },
 ];

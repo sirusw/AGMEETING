@@ -49,105 +49,107 @@ const sections = [
       // },
       {
         title: 'Session',
-        path: '/dashboard/session',
-        icon: <Clock fontSize="small"/>
+        path: '/',
+        icon: <ChartSquareBarIcon fontSize="small" />
       },
       {
         title: 'Agenda',
-        path: '/dashboard/agenda',
-        icon: <ClipboardListIcon fontSize="small" />
+        path: '/agenda',
+        icon: <ChartPieIcon fontSize="small" />
       },
       {
         title: 'Vault',
-        path: '/dashboard/vault',
-        icon: <Lock fontSize="small" />
+        path: '/Vault',
+        icon: <ShoppingBagIcon fontSize="small" />
       },
+      // {
+      //   title: 'Account',
+      //   path: '/dashboard/account',
+      //   icon: <UserIcon fontSize="small" />
+      // }
+    ]
+  },
+
+  {
+    title: 'Management',
+    items: [
       {
-        title: 'Interactions',
-        path: '/dashboard/interactions',
-        icon: <Users fontSize="small" />
-      },
-      {
-        title: 'Content Message',
-        path: '/dashboard/contentmessage',
-        icon: <BriefcaseIcon fontSize="small" />
+        title: 'Users',
+        path: '/LoggedinUsers',
+        icon: <UsersIcon fontSize="small" />,
+        children: [
+          {
+            title: 'Logged In Users',
+            path: '/loggedinUsers'
+          },
+          {
+            title: 'Registered Users',
+            path: '/registeredusers'
+          },
+          {
+            title: 'Stats',
+            path: '/stats'
+          },
+          // {
+          //   title: 'Edit',
+          //   path: '/dashboard/customers/1/edit'
+          // }
+        ]
       },
       {
         title: 'General Settings',
-        path: '/dashboard/settings',
-        icon: <Cog fontSize="small" />
-      }
+        path: '/settings',
+        icon: <ShoppingBagIcon fontSize="small" />
+      },
+
+      // {
+      //   title: 'Products',
+      //   path: '/dashboard/products',
+      //   icon: <ShoppingCartIcon fontSize="small" />,
+      //   children: [
+      //     {
+      //       title: 'List',
+      //       path: '/dashboard/products'
+      //     },
+      //     {
+      //       title: 'Create',
+      //       path: '/dashboard/products/new'
+      //     }
+      //   ]
+      // },
+      // {
+      //   title: 'Orders',
+      //   icon: <FolderOpenIcon fontSize="small" />,
+      //   path: '/dashboard/orders',
+      //   children: [
+      //     {
+      //       title: 'List',
+      //       path: '/dashboard/orders'
+      //     },
+      //     {
+      //       title: 'Details',
+      //       path: '/dashboard/orders/1'
+      //     }
+      //   ]
+      // },
+      // {
+      //   title: 'Invoices',
+      //   path: '/dashboard/invoices',
+      //   icon: <FolderOpenIcon fontSize="small" />,
+      //   children: [
+      //     {
+      //       title: 'List',
+      //       path: '/dashboard/invoices'
+      //     },
+      //     {
+      //       title: 'Details',
+      //       path: '/dashboard/invoices/1'
+      //     }
+      //   ]
+      // }
     ]
   },
-  // {
-  //   title: 'Management',
-  //   items: [
-  //     {
-  //       title: 'Customers',
-  //       path: '/dashboard/customers',
-  //       icon: <UsersIcon fontSize="small" />,
-  //       children: [
-  //         {
-  //           title: 'List',
-  //           path: '/dashboard/customers'
-  //         },
-  //         {
-  //           title: 'Details',
-  //           path: '/dashboard/customers/1'
-  //         },
-  //         {
-  //           title: 'Edit',
-  //           path: '/dashboard/customers/1/edit'
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       title: 'Products',
-  //       path: '/dashboard/products',
-  //       icon: <ShoppingCartIcon fontSize="small" />,
-  //       children: [
-  //         {
-  //           title: 'List',
-  //           path: '/dashboard/products'
-  //         },
-  //         {
-  //           title: 'Create',
-  //           path: '/dashboard/products/new'
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       title: 'Orders',
-  //       icon: <FolderOpenIcon fontSize="small" />,
-  //       path: '/dashboard/orders',
-  //       children: [
-  //         {
-  //           title: 'List',
-  //           path: '/dashboard/orders'
-  //         },
-  //         {
-  //           title: 'Details',
-  //           path: '/dashboard/orders/1'
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       title: 'Invoices',
-  //       path: '/dashboard/invoices',
-  //       icon: <FolderOpenIcon fontSize="small" />,
-  //       children: [
-  //         {
-  //           title: 'List',
-  //           path: '/dashboard/invoices'
-  //         },
-  //         {
-  //           title: 'Details',
-  //           path: '/dashboard/invoices/1'
-  //         }
-  //       ]
-  //     }
-  //   ]
-  // },
+
   // {
   //   title: 'Platforms',
   //   items: [
