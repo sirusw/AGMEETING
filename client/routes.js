@@ -37,12 +37,13 @@ const routes = [
     { path: 'docs', element: <Docs /> },
     {
         path: 'about',
-        element: <About />,
+        element: <About/>,
         children: [
             {
-                path: '/about', element: <NoMatch />
+                path: '/about', element: <NoMatch/>
             }
         ]
+    },
     // {
     //     path: 'about',
     //     element: <About />,
