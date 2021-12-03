@@ -71,13 +71,77 @@ const sections = [
         icon: <MailIcon fontSize="small" />
       },
       {
-        title: "Interactions",
-        path: "/dashboard/interaction",
-        icon: <ShareIcon fontSize="small" />,
+        title: 'Chat',
+        path: '/dashboard/chat',
+        icon: <ChatAltIcon fontSize="small" />
+      },
+      {
+        title: 'Calendar',
+        path: '/dashboard/calendar',
+        icon: <CalendarIcon fontSize="small" />
+      }
+    ]
+  },
+  {
+    title: 'General',
+    items: [
+      {
+        title: 'Session',
+        path: '/',
+        icon: <ChartSquareBarIcon fontSize="small" />
+      },
+      {
+        title: 'Agenda',
+        path: '/agenda',
+        icon: <ChartPieIcon fontSize="small" />
+      },
+      {
+        title: 'Vault',
+        path: '/Vault',
+        icon: <ShoppingBagIcon fontSize="small" />
+      },
+      // {
+      //   title: 'Account',
+      //   path: '/dashboard/account',
+      //   icon: <UserIcon fontSize="small" />
+      // }
+    ]
+  },
+
+  {
+    title: 'Management',
+    items: [
+      {
+        title: 'Users',
+        path: '/LoggedinUsers',
+        icon: <UsersIcon fontSize="small"/>,
+        children: [
+          {
+            title: 'Logged In Users',
+            path: '/loggedinUsers'
+          },
+          {
+            title: 'Registered Users',
+            path: '/registeredusers'
+          },
+          {
+            title: 'Stats',
+            path: '/stats'
+          },
+          // {
+          //   title: 'Edit',
+          //   path: '/dashboard/customers/1/edit'
+          // }
+        ]
+      },
+      {
+        title: 'General Settings',
+        path: '/settings',
+        icon: <ShoppingBagIcon fontSize="small"/>
       },
     ],
   },
-  ];
+];
 
 const DashboardSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
