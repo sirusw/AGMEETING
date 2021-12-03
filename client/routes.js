@@ -8,6 +8,13 @@ import App from './App';
 import Table1 from './Component/DashBoard/Tables/Table1'
 import Land from './Land';
 import DashboardLayout from './Component/DashBoard/Layout';
+
+//Session Components
+import Land from './Land';
+import GroupedList3 from './Component/Session/Session';
+import Agenda from './Component/Agenda/agenda'
+import Vault from './Component/Vault/vault'
+
 import About from './About';
 import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
@@ -20,6 +27,10 @@ import SignIn from "./login/signin";
 import Login from "./Login";
 import Docs from "./Component/DashBoard/Documentations/Docs";
 
+import LoggedinUsers from './Component/AdminComponents/LoggedInUsers';
+import RegisteredUsers from './Component/AdminComponents/RegisteredUsers';
+import Stats from './Component/AdminComponents/Stats/Stats';
+import Settings from './Component/AdminComponents/Settings/Settings'
 
 // // Declarative routing model v5
 // return (
@@ -53,7 +64,6 @@ const routes = [
     //         }
     //     ]
     // },
-
     {
         path: 'signin',
         element: <SignIn />
@@ -66,13 +76,25 @@ const routes = [
                 path: 'table1',
                 element: <Table1 />
             },
+            { index: true, element: <GroupedList3 /> },
             {
                 path: 'event-manage',
                 element: <EventDetails />,
             },
             {
+                path: '/agenda',
+                element: <Agenda />,
+            },
+            {
                 path: 'test',
                 element: <Testpg />,
+                // children: [
+                //     { index: true, element: <Testpg/> },
+                // ]x
+            },
+            {
+                path: '/vault',
+                element: <Vault />,
                 // children: [
                 //     { index: true, element: <Testpg/> },
                 // ]x
@@ -92,6 +114,22 @@ const routes = [
             {
                 path: "interaction",
                 element: <InteractionPanel />,
+            },
+            {
+                path: '/loggedinUsers',
+                element: <LoggedinUsers />
+            },
+            {
+                path: '/registeredusers',
+                element: <RegisteredUsers />
+            },
+            {
+                path: '/stats',
+                element: <Stats />
+            },
+            {
+                path: '/settings',
+                element: <Settings />
             },
             { path: "*", element: <NoMatch /> }
         ]
@@ -117,22 +155,9 @@ const routes = [
     //         },
     //         { path: "*", element: <NoMatch /> }
     //     ]
-  // },
-  // // {
-  //     path: '/about',
-  //     element: <About />,
 
-  //     children: [
-  //         { index: true, element: <Testpg /> },
-  //         {
-  //             path: '/about',
-  //             element: <About />,
-  //             children: [
-  //                 { index: true, element: <About /> },
-  //             ]
-  //         },
-  //         { path: "*", element: <NoMatch /> }
-  //     ]
+    // },
+
 
   // },
 
