@@ -1,0 +1,44 @@
+
+Create table Participant(
+meetingId INT,
+email VARCHAR(100),
+password VARCHAR(100),
+FOREIGN KEY (meetingId) REFERENCES meeting(id)
+);
+
+Create table Moderator(
+id INT AUTO_INCREMENT
+email VARCHAR(100),
+password VARCHAR(100),
+PRIMARY KEY (id)
+);
+
+Create table Admin(
+id INT AUTO_INCREMENT
+email VARCHAR(100),
+password VARCHAR(100),
+PRIMARY KEY (id)
+);
+
+Create table Meeting(
+id INT AUTO_INCREMENT,
+modId INT, 
+adminId INT,
+
+PRIMARY KEY(id)
+FOREIGN KEY (modId) REFERENCES Moderator(id)
+FOREIGN KEY (adminId) REFERENCES Admin(id)
+);
+
+
+Create table Item(
+meetingId INT, 
+order INT, 
+description varchar(2000),
+file BLOB,
+votesFor INT, 
+votesAgainst INT, 
+abstain INT,
+FOREIGN KEY (meetingId) REFERENCES Meeting(id)
+);
+
