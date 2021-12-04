@@ -6,7 +6,6 @@ import { ThemeProvider } from "@mui/material/styles";
 
 import App from './App';
 import Table1 from './Component/DashBoard/Tables/Table1'
-import Land from './Land';
 import DashboardLayout from './Component/DashBoard/Layout';
 
 //Session Components
@@ -45,6 +44,33 @@ import Settings from './Component/AdminComponents/Settings/Settings'
 //Programmatic routing model v6
 const routes = [
     { path: '/', element: <Login /> },
+    {
+        path: '/agenda',
+        element: <Agenda />,
+    },
+    {
+        path: '/vault',
+        element: <Vault />,
+        // children: [
+        //     { index: true, element: <Testpg/> },
+        // ]x
+    },
+    {
+        path: '/loggedinUsers',
+        element: <LoggedinUsers />
+    },
+    {
+        path: '/registeredusers',
+        element: <RegisteredUsers />
+    },
+    {
+        path: '/stats',
+        element: <Stats />
+    },
+    {
+        path: '/settings',
+        element: <Settings />
+    },
     { path: 'docs', element: <Docs /> },
     {
         path: 'about',
@@ -82,19 +108,8 @@ const routes = [
                 element: <EventDetails />,
             },
             {
-                path: '/agenda',
-                element: <Agenda />,
-            },
-            {
                 path: 'test',
                 element: <Testpg />,
-                // children: [
-                //     { index: true, element: <Testpg/> },
-                // ]x
-            },
-            {
-                path: '/vault',
-                element: <Vault />,
                 // children: [
                 //     { index: true, element: <Testpg/> },
                 // ]x
@@ -114,22 +129,6 @@ const routes = [
             {
                 path: "interaction",
                 element: <InteractionPanel />,
-            },
-            {
-                path: '/loggedinUsers',
-                element: <LoggedinUsers />
-            },
-            {
-                path: '/registeredusers',
-                element: <RegisteredUsers />
-            },
-            {
-                path: '/stats',
-                element: <Stats />
-            },
-            {
-                path: '/settings',
-                element: <Settings />
             },
             { path: "*", element: <NoMatch /> }
         ]
