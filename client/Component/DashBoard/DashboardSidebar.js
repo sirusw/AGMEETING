@@ -30,6 +30,7 @@ import ShoppingBagIcon from "../../icons/ShoppingBag";
 import ShoppingCartIcon from "../../icons/ShoppingCart";
 import UserIcon from "../../icons/User";
 import UsersIcon from "../../icons/Users";
+import HomeIcon from "../../icons/Home";
 import Logo from "../../Logo";
 import NavSection from "../../NavSection";
 import Scrollbar from "../../Scrollbar";
@@ -40,14 +41,9 @@ const sections = [
     title: "Tables",
     items: [
       {
-        title: "Table",
+        title: "List of Users",
         path: "/dashboard/table",
-        icon: <ClipboardListIcon fontSize="small" />,
-      },
-      {
-        title: 'Table1',
-        path: '/dashboard/table1',
-        icon: <ClipboardListIcon fontSize="small" />
+        icon: <FolderOpenIcon fontSize="small" />,
       },
     ],
   },
@@ -55,28 +51,13 @@ const sections = [
     title: 'Events',
     items: [
       {
-        title: 'Event Management',
+        title: 'New Event',
         path: '/dashboard/event-manage',
         icon: <ClipboardListIcon fontSize="small" />
-      }
-    ]
-  },
-   {
-    title: 'List',
-    items: [
+      },
       {
-        title: 'List',
+        title: 'Event Management',
         path: '/dashboard/list',
-        icon: <ClipboardListIcon fontSize="small" />
-      }
-    ]
-  },
-  {
-    title: 'Content',
-    items: [
-      {
-        title : 'Content',
-        path: '/dashboard/ContentMessage',
         icon: <ClipboardListIcon fontSize="small" />
       }
     ]
@@ -85,13 +66,82 @@ const sections = [
     title: "Interaction",
     items: [
       {
-        title: "Interaction",
-        path: "/dashboard/interaction",
-        icon: <ClipboardListIcon fontSize="small" />,
+        title : 'Send Messages',
+        path: '/dashboard/ContentMessage',
+        icon: <MailIcon fontSize="small" />
+      },
+      {
+        title: 'Chat',
+        path: '/dashboard/chat',
+        icon: <ChatAltIcon fontSize="small" />
+      },
+      {
+        title: 'Calendar',
+        path: '/dashboard/calendar',
+        icon: <CalendarIcon fontSize="small" />
+      }
+    ]
+  },
+  {
+    title: 'General',
+    items: [
+      {
+        title: 'Session',
+        path: '/',
+        icon: <ChartSquareBarIcon fontSize="small" />
+      },
+      {
+        title: 'Agenda',
+        path: '/agenda',
+        icon: <ChartPieIcon fontSize="small" />
+      },
+      {
+        title: 'Vault',
+        path: '/Vault',
+        icon: <ShoppingBagIcon fontSize="small" />
+      },
+      // {
+      //   title: 'Account',
+      //   path: '/dashboard/account',
+      //   icon: <UserIcon fontSize="small" />
+      // }
+    ]
+  },
+
+  {
+    title: 'Management',
+    items: [
+      {
+        title: 'Users',
+        path: '/LoggedinUsers',
+        icon: <UsersIcon fontSize="small"/>,
+        children: [
+          {
+            title: 'Logged In Users',
+            path: '/loggedinUsers'
+          },
+          {
+            title: 'Registered Users',
+            path: '/registeredusers'
+          },
+          {
+            title: 'Stats',
+            path: '/stats'
+          },
+          // {
+          //   title: 'Edit',
+          //   path: '/dashboard/customers/1/edit'
+          // }
+        ]
+      },
+      {
+        title: 'General Settings',
+        path: '/settings',
+        icon: <ShoppingBagIcon fontSize="small"/>
       },
     ],
   },
-  ];
+];
 
 const DashboardSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
@@ -153,17 +203,11 @@ const DashboardSidebar = (props) => {
                   width: 48
                 }}
               /> */}
-              Avater
+              Avatar
             </RouterLink>
             <Box sx={{ ml: 2 }}>
               <Typography color="textPrimary" variant="subtitle2">
                 {/* {user.name} */} User Name
-              </Typography>
-              <Typography color="textSecondary" variant="body2">
-                Your plan:{" "}
-                <Link color="primary" component={RouterLink} to="/pricing">
-                  {/* {user.plan} */}You plan....fjkldjskjfkdsjklfj lorem
-                </Link>
               </Typography>
             </Box>
           </Box>

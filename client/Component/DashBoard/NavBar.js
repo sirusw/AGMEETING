@@ -5,6 +5,7 @@ import { AppBar, Box, IconButton, Toolbar } from '@mui/material';
 import { experimentalStyled } from "@mui/material";
 import { Button, ButtonGroup } from '@mui/material';
 // import MenuIcon from '../../icons/Menu';
+import MenuIcon from '../../icons/Menu';
 // import AccountPopover from './AccountPopover';
 // import ContactsPopover from './ContactsPopover';
 // import ContentSearch from './ContentSearch';
@@ -41,7 +42,7 @@ const NavBar = (props) => {
                         }
                     }}
                 >
-                    {/* <MenuIcon fontSize="small" /> */}
+                    <MenuIcon fontSize="small" />
                 </IconButton>
                 <RouterLink to="/">
                     {/* <Logo

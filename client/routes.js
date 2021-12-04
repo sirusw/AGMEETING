@@ -6,8 +6,14 @@ import { ThemeProvider } from "@mui/material/styles";
 
 import App from './App';
 import Table1 from './Component/DashBoard/Tables/Table1'
-import Land from './Land';
 import DashboardLayout from './Component/DashBoard/Layout';
+
+//Session Components
+import Land from './Land';
+import GroupedList3 from './Component/Session/Session';
+import Agenda from './Component/Agenda/agenda'
+import Vault from './Component/Vault/vault'
+
 import About from './About';
 import NoMatch from './NoMatch';
 import Testpg from './anothertestpg';
@@ -16,8 +22,14 @@ import EventDetails from "./Component/DashBoard/Events/EventDetails";
 import List from './List'
 import ContentMessage from './ContentMessage';
 import InteractionPanel from "./Interactions";
+import Login from "./Login";
+import Docs from "./Component/DashBoard/Documentations/Docs";
 import SignIn from "./login/signin";
 
+import LoggedinUsers from './Component/AdminComponents/LoggedInUsers';
+import RegisteredUsers from './Component/AdminComponents/RegisteredUsers';
+import Stats from './Component/AdminComponents/Stats/Stats';
+import Settings from './Component/AdminComponents/Settings/Settings'
 
 // // Declarative routing model v5
 // return (
@@ -31,6 +43,44 @@ import SignIn from "./login/signin";
 
 //Programmatic routing model v6
 const routes = [
+    { path: '/', element: <Login /> },
+    {
+        path: '/agenda',
+        element: <Agenda />,
+    },
+    {
+        path: '/vault',
+        element: <Vault />,
+        // children: [
+        //     { index: true, element: <Testpg/> },
+        // ]x
+    },
+    {
+        path: '/loggedinUsers',
+        element: <LoggedinUsers />
+    },
+    {
+        path: '/registeredusers',
+        element: <RegisteredUsers />
+    },
+    {
+        path: '/stats',
+        element: <Stats />
+    },
+    {
+        path: '/settings',
+        element: <Settings />
+    },
+    { path: 'docs', element: <Docs /> },
+    {
+        path: 'about',
+        element: <About/>,
+        children: [
+            {
+                path: '/about', element: <NoMatch/>
+            }
+        ]
+    },
     // {
     //     path: 'about',
     //     element: <About />,
@@ -40,7 +90,6 @@ const routes = [
     //         }
     //     ]
     // },
-
     {
         path: 'signin',
         element: <SignIn />
@@ -53,6 +102,7 @@ const routes = [
                 path: 'table1',
                 element: <Table1 />
             },
+            { index: true, element: <GroupedList3 /> },
             {
                 path: 'event-manage',
                 element: <EventDetails />,
@@ -104,22 +154,9 @@ const routes = [
     //         },
     //         { path: "*", element: <NoMatch /> }
     //     ]
-  // },
-  // // {
-  //     path: '/about',
-  //     element: <About />,
 
-  //     children: [
-  //         { index: true, element: <Testpg /> },
-  //         {
-  //             path: '/about',
-  //             element: <About />,
-  //             children: [
-  //                 { index: true, element: <About /> },
-  //             ]
-  //         },
-  //         { path: "*", element: <NoMatch /> }
-  //     ]
+    // },
+
 
   // },
 
