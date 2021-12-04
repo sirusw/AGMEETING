@@ -4,7 +4,7 @@ Oct.20/21
 
 Start Time: 12:30pm
 
-End Time: 12:49pm 
+End Time: 12:49pm
 
 Attendees: Riley, Reid, Adam
 
@@ -32,6 +32,6 @@ Task for this week:
 
 Goals for next time:
 
-- Have clearer, more attainable goals from the client 
+- Have clearer, more attainable goals from the client
 - Material UI stuff should be looked through and understood
 - Work from the forked github from client instead of our temporary one

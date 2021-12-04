@@ -1,11 +1,10 @@
 # AGMEETING
-NPM Version : 12.18.2
 
+NPM Version : 12.18.2
 
 # Installation
 
-npm install 
-
+npm install
 
 # Starting/Running App:
 

@@ -4,11 +4,11 @@ Nov.03/21
 
 Start Time: 12:30pm
 
-End Time: 12:50pm 
+End Time: 12:50pm
 
 Attendees: Riley, Reid, Adam, Mason
 
-Absent: 
+Absent:
 
 **Project**
 
@@ -31,4 +31,3 @@ Task for this week:
 Goals for next time:
 
 - Have our next task from Ife laid out and hopefully started after the Friday meeting
-

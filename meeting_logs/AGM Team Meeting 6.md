@@ -4,7 +4,7 @@ Nov.17/21
 
 Start Time: 12:30pm
 
-End Time: 12:52pm 
+End Time: 12:52pm
 
 Attendees: Reid, Adam, Mason
 
@@ -27,11 +27,10 @@ Task for this week:
 - Split up the next 5 pages between us
 - Adam will do navigation
 - Mason will do general settings
-- Riley will do content message 
-- Reid will do role call and the user stuff 
+- Riley will do content message
+- Reid will do role call and the user stuff
 
 Goals for next time:
 
-- Have all pages assigned for teammates 
-- Possibly set up a dummy database to demonstrate for the presentation. Will work on this along side the 5 pages 
-
+- Have all pages assigned for teammates
+- Possibly set up a dummy database to demonstrate for the presentation. Will work on this along side the 5 pages

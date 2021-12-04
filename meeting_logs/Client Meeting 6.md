@@ -14,4 +14,3 @@ End Time: 10:15am pst
 - Styling we have doesn’t fill the whole page, might be something Ife can fix for us
 - Talked about the upcoming peer evaluation, Ife was willing to change the schedule for us, but we told him that we’ll continue with his plan of working on front end things first
 - Ife plans to have front end stuff done by the end of November
-

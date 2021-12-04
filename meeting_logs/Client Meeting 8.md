@@ -14,7 +14,7 @@ End Time: 11:26am pst
 
 \- General settings and stats page have had their functions combined
 
-`	`- Stats page?
+` `- Stats page?
 
 \- Notifications buttons on the top menu bar
 
@@ -56,20 +56,10 @@ End Time: 11:26am pst
 
 \- Modal functionality in general settings
 
-`	`- Copy the code from the main branch and use the code from there
+` `- Copy the code from the main branch and use the code from there
 
 \- Sent out a new list for work
 
 \- Check all pages that are completed or outstanding
 
 \- Meeting next Wednesday at 9am
-
-
-
-
-
-
-
-
-
-

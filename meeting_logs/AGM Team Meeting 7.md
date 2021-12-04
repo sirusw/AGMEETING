@@ -4,11 +4,11 @@ Nov.22/21
 
 Start Time: 6:30pm
 
-End Time: 7:05pm 
+End Time: 7:05pm
 
 Attendees: Reid, Adam, Mason, Riley
 
-Absent: 
+Absent:
 
 **Project**
 
@@ -19,7 +19,7 @@ Progress:
 
 Problems:
 
-- Our peer evaluation will be barren in our case considering we have only worked on front end design 
+- Our peer evaluation will be barren in our case considering we have only worked on front end design
 - No new wireframe yet to work on
 
 **Plan**
@@ -32,12 +32,11 @@ Task for this week:
 - Reid will handle the passing of the login to the dashboard
 - Mason will handle the save button functionality for the settings page, and (maybe) the settings page layout
 
-
 - For the peer evaluation, we split up the work required as follows:
 - Adam will present on Wednesday for session 1
 - Adam will evaluate the LIMS session 2 think aloud for team 1 on Wednesday, and the Woo Woo think aloud for team 0 on Friday
 - Riley will present on Wednesday for session 2
-- Riley will evaluate the Checklick session 3 think aloud for team 2 on Friday, and the Cyclops session 3 think aloud for team 2 on Friday 
+- Riley will evaluate the Checklick session 3 think aloud for team 2 on Friday, and the Cyclops session 3 think aloud for team 2 on Friday
 - Reid will present on Friday for session 1
 - Reid will evaluate the Woo Woo session 2 think aloud for team 2 on Wednesday, and the Ethics Dashboard session 2 feedback for team 1 on Wednesday
 - Mason will present on Friday for session 2
