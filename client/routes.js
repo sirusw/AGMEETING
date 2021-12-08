@@ -127,10 +127,6 @@ const routes = [
         path: "ContentMessage",
         element: <ContentMessage />,
       },
-      {
-        path: "interaction",
-        element: <InteractionPanel />,
-      },
       { path: "*", element: <NoMatch /> },
     ],
   },
