@@ -24,6 +24,7 @@ import ContentMessage from "./ContentMessage";
 import Login from "./Login";
 import Docs from "./Component/DashBoard/Documentations/Docs";
 import SignIn from "./login/signin";
+import SignUp from "./login/signup";
 
 import LoggedinUsers from "./Component/AdminComponents/LoggedInUsers";
 import RegisteredUsers from "./Component/AdminComponents/RegisteredUsers";
@@ -126,6 +127,10 @@ const routes = [
         path: "ContentMessage",
         element: <ContentMessage />,
       },
+      {
+        path: "interaction",
+        element: <InteractionPanel />,
+      },
       { path: "*", element: <NoMatch /> },
     ],
   },
@@ -133,6 +138,12 @@ const routes = [
     path: "/",
     element: <DashboardLayout />,
   },
+    
+
+    // },
+    // // {
+    //     path: '/about',
+    //     element: <About />,
 
   // },
   // // {
