@@ -6,17 +6,26 @@ import { ThemeProvider } from "@mui/material/styles";
 
 import App from "./App";
 import Table1 from "./Component/DashBoard/Tables/Table1";
-import DashboardLayout from "./Component/DashBoard/Layout";
 
 //Session Components
 import Land from "./Land";
 import GroupedList3 from "./Component/Session/Session";
 import Agenda from "./Component/Agenda/agenda";
 import Vault from "./Component/Vault/vault";
+//Layout
+import DashboardLayout from './Component/DashBoard/Layout';
 
-import About from "./About";
-import NoMatch from "./NoMatch";
-import Testpg from "./anothertestpg";
+//Session Components
+import Land from './Land';
+import GroupedList3 from './Component/Session/Session';
+import Agenda from './Component/Agenda/agenda'
+import Vault from './Component/Vault/vault'
+
+import About from './About';
+import NoMatch from './NoMatch';
+import Testpg from './anothertestpg';
+
+
 import Table from "./Component/DashBoard/Tables/Table";
 import EventDetails from "./Component/DashBoard/Events/EventDetails";
 import List from "./List";
@@ -26,10 +35,11 @@ import Docs from "./Component/DashBoard/Documentations/Docs";
 import SignIn from "./login/signin";
 import SignUp from "./login/signup";
 
-import LoggedinUsers from "./Component/AdminComponents/LoggedInUsers";
-import RegisteredUsers from "./Component/AdminComponents/RegisteredUsers";
-import Stats from "./Component/AdminComponents/Stats/Stats";
-import Settings from "./Component/AdminComponents/Settings/Settings";
+
+import LoggedinUsers from './Component/AdminComponents/LoggedInUsers';
+import RegisteredUsers from './Component/AdminComponents/RegisteredUsers';
+import Stats from './Component/AdminComponents/Stats/Stats';
+import Settings from './Component/AdminComponents/Settings/Settings'
 
 // // Declarative routing model v5
 // return (
@@ -134,7 +144,7 @@ const routes = [
     path: "/",
     element: <DashboardLayout />,
   },
-    
+
 
     // },
     // // {
