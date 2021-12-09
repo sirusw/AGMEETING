@@ -7,11 +7,6 @@ import { ThemeProvider } from "@mui/material/styles";
 import App from "./App";
 import Table1 from "./Component/DashBoard/Tables/Table1";
 
-//Session Components
-import Land from "./Land";
-import GroupedList3 from "./Component/Session/Session";
-import Agenda from "./Component/Agenda/agenda";
-import Vault from "./Component/Vault/vault";
 //Layout
 import DashboardLayout from './Component/DashBoard/Layout';
 
