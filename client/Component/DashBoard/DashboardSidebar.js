@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Avatar, Box, Button, Divider, Drawer, Link, Typography, useMediaQuery } from '@mui/material';
@@ -26,6 +26,7 @@ import NavSection from '../../NavSection';
 import Scrollbar from '../../Scrollbar';
 // import { Receipt } from '@material-ui/icons';
 
+import Modal from './Interactions'
 const sections = [
   {
     title: 'General',
@@ -213,6 +214,18 @@ const DashboardSidebar = (props) => {
     }
   }, [location.pathname]);
 
+  // Inter new
+  const [isApplicationOpen, setIsApplicationOpen] = useState(false);
+  // temp
+  const handleApplyModalOpen = () => {
+    setIsApplicationOpen(true);
+  };
+  // temp
+  const handleApplyModalClose = () => {
+    setIsApplicationOpen(false);
+  };
+
+
   const content = (
     <Box
       sx={{
@@ -317,7 +330,7 @@ const DashboardSidebar = (props) => {
           >
             Check our docs
           </Typography>
-          <Button
+          {/* <Button
             color="primary"
             component={RouterLink}
             fullWidth
@@ -326,7 +339,25 @@ const DashboardSidebar = (props) => {
             variant="contained"
           >
             Documentation
+          </Button> */}
+
+          <Button
+            color="primary"
+            onClick={handleApplyModalOpen}
+            fullWidth
+            sx={{ mt: 2 }}
+            to="#"
+            variant="contained"
+          >
+            Interactions
           </Button>
+          <Modal
+            // authorAvatar={project.author.avatar}
+            // authorName={project.author.name}
+            onApply={handleApplyModalClose}
+            onClose={handleApplyModalClose}
+            open={isApplicationOpen}
+          />
         </Box>
       </Scrollbar>
     </Box>
@@ -353,20 +384,29 @@ const DashboardSidebar = (props) => {
   }
 
   return (
-    <Drawer
-      anchor="left"
-      onClose={onMobileClose}
-      open={openMobile}
-      PaperProps={{
-        sx: {
-          backgroundColor: 'background.paper',
-          width: 280
-        }
-      }}
-      variant="temporary"
-    >
-      {content}
-    </Drawer>
+    <>
+      <Drawer
+        anchor="left"
+        onClose={onMobileClose}
+        open={openMobile}
+        PaperProps={{
+          sx: {
+            backgroundColor: 'background.paper',
+            width: 280
+          }
+        }}
+        variant="temporary"
+      >
+        {content}
+      </Drawer>
+      <Modal
+        // authorAvatar={project.author.avatar}
+        // authorName={project.author.name}
+        onApply={handleApplyModalClose}
+        onClose={handleApplyModalClose}
+        open={isApplicationOpen}
+      />
+    </>
   );
 };
 

@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { AppBar, Box, IconButton, Toolbar } from '@mui/material';
 import { experimentalStyled } from "@mui/material";
 import MenuIcon from '../../icons/Menu';
-// import AccountPopover from './AccountPopover';
+import AccountPopover from './AccountPopover';
 // import ContactsPopover from './ContactsPopover';
 // import ContentSearch from './ContentSearch';
 // import LanguagePopover from './LanguagePopover';
 // import Logo from '../Logo';
-// import NotificationsPopover from './NotificationsPopover';
+import NotificationsPopover from './NotificationsPopover';
 
 const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
     ...(theme.palette.mode === 'light' && {
@@ -43,6 +43,9 @@ const NavBar = (props) => {
                     <MenuIcon fontSize="small" />
                 </IconButton>
                 <RouterLink to="/">
+                    <h1>
+                        AGMEETING
+                    </h1>
                     {/* <Logo
             sx={{
               display: {
@@ -68,10 +71,10 @@ const NavBar = (props) => {
                     {/* <ContactsPopover /> */}
                 </Box>
                 <Box sx={{ ml: 1 }}>
-                    {/* <NotificationsPopover /> */}
+                    <NotificationsPopover />
                 </Box>
                 <Box sx={{ ml: 2 }}>
-                    {/* <AccountPopover /> */}
+                    <AccountPopover />
                 </Box>
             </Toolbar>
         </DashboardNavbarRoot>
