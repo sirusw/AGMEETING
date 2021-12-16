@@ -17,6 +17,10 @@ import LoggedinUsers from "./Component/AdminComponents/LoggedInUsers";
 import RegisteredUsers from "./Component/AdminComponents/RegisteredUsers";
 import Stats from "./Component/AdminComponents/Stats/Stats";
 import Settings from "./Component/AdminComponents/Settings/Settings";
+import Login from "./Login/Login";
+
+import SignIn from "./Login/signin";
+import SignUp from "./Login/signup";
 
 // // Declarative routing model
 // return (
@@ -74,10 +78,22 @@ const routes = [
         path: "/settings",
         element: <Settings />,
       },
+
       { path: "*", element: <NoMatch /> },
     ],
   },
-
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/login2",
+    element: <SignIn />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
   // },
   // // {
   //     path: '/about',
