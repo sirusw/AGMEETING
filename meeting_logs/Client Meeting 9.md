@@ -6,7 +6,7 @@ Start Time: 2:15pm pst
 
 End Time: 2:30pm pst
 
-- Working on front end now, need to have subscription payment system for Jira
+- Working on front end still, need to have subscription payment system for Jira
 - Ife work has been pushed to us to work on, we will be starting a database using his code
 - Next week, Ife asked us to go through our thought process on how we should approach the database design, as we have a ER diagram built
 - Ife wants the best option based on our groups, we can each work in whatever database software we choose, Ife suggested PSQL
