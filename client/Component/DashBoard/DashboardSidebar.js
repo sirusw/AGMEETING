@@ -289,17 +289,7 @@ const DashboardSidebar = (props) => {
               p: 2,
             }}
           >
-            <RouterLink to="/dashboard/account">
-              {/* <Avatar
-                src={user.avatar}
-                sx={{
-                  cursor: 'pointer',
-                  height: 48,
-                  width: 48
-                }}
-              /> */}
-              Avatar
-            </RouterLink>
+            <RouterLink to="/dashboard/account">Avatar</RouterLink>
             <Box sx={{ ml: 2 }}>
               <Typography color="textPrimary" variant="subtitle2">
                 {props.currentUser.username}
@@ -336,16 +326,6 @@ const DashboardSidebar = (props) => {
           <Typography color="textSecondary" variant="body2">
             Check our docs
           </Typography>
-          {/* <Button
-            color="primary"
-            component={RouterLink}
-            fullWidth
-            sx={{ mt: 2 }}
-            to="/docs"
-            variant="contained"
-          >
-            Documentation
-          </Button> */}
 
           <Button
             color="primary"
@@ -358,8 +338,6 @@ const DashboardSidebar = (props) => {
             Interactions
           </Button>
           <Modal
-            // authorAvatar={project.author.avatar}
-            // authorName={project.author.name}
             onApply={handleApplyModalClose}
             onClose={handleApplyModalClose}
             open={isApplicationOpen}
@@ -406,8 +384,6 @@ const DashboardSidebar = (props) => {
         {content}
       </Drawer>
       <Modal
-        // authorAvatar={project.author.avatar}
-        // authorName={project.author.name}
         onApply={handleApplyModalClose}
         onClose={handleApplyModalClose}
         open={isApplicationOpen}

@@ -31,18 +31,8 @@ import SignUp from "./Login/signup";
 //     </Router>
 // )
 
-//Programmatic routing model
+//Programmatic routing model this basically contains all the routes for the applications, new routes must be added to this array after the components are created.
 const routes = [
-  // { path: '/', element: <Land /> },
-  // {
-  //     path: 'about',
-  //     element: <About />,
-  //     children: [
-  //         {
-  //             path: '/about', element: <NoMatch />
-  //         }
-  //     ]
-  // },
   {
     path: "/",
     element: <DashboardLayout />,
@@ -52,15 +42,9 @@ const routes = [
         path: "/agenda",
         element: <Agenda />,
       },
-      // {
-      //     path: ''
-      // },
       {
         path: "/vault",
         element: <Vault />,
-        // children: [
-        //     { index: true, element: <Testpg/> },
-        // ]x
       },
       {
         path: "/loggedinUsers",
@@ -94,24 +78,6 @@ const routes = [
     path: "/signup",
     element: <SignUp />,
   },
-  // },
-  // // {
-  //     path: '/about',
-  //     element: <About />,
-
-  //     children: [
-  //         { index: true, element: <Testpg /> },
-  //         {
-  //             path: '/about',
-  //             element: <About />,
-  //             children: [
-  //                 { index: true, element: <About /> },
-  //             ]
-  //         },
-  //         { path: "*", element: <NoMatch /> }
-  //     ]
-
-  // },
 
   { path: "*", element: <NoMatch /> },
 ];

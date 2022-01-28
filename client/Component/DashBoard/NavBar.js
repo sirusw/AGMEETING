@@ -6,10 +6,6 @@ import { experimentalStyled } from "@mui/material";
 import useSettings from "../../hooks/useSettings";
 import MenuIcon from "../../icons/Menu";
 import AccountPopover from "./AccountPopover";
-// import ContactsPopover from './ContactsPopover';
-// import ContentSearch from './ContentSearch';
-// import LanguagePopover from './LanguagePopover';
-// import Logo from '../Logo';
 import NotificationsPopover from "./NotificationsPopover";
 
 const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
@@ -56,16 +52,6 @@ const NavBar = (props) => {
         </IconButton>
         <RouterLink to="/">
           <h1>AGMEETING</h1>
-          {/* <Logo
-            sx={{
-              display: {
-                lg: 'inline',
-                xs: 'none'
-              },
-              height: 40,
-              width: 40
-            }}
-          /> */}
         </RouterLink>
         <Box
           sx={{
@@ -73,9 +59,8 @@ const NavBar = (props) => {
             ml: 2,
           }}
         />
-        {/* <LanguagePopover /> */}
-        <Box sx={{ ml: 1 }}>{/* <ContentSearch /> */}</Box>
-        <Box sx={{ ml: 1 }}>{/* <ContactsPopover /> */}</Box>
+        <Box sx={{ ml: 1 }}></Box>
+        <Box sx={{ ml: 1 }}></Box>
         <Box sx={{ ml: 1 }}>
           <NotificationsPopover />
         </Box>

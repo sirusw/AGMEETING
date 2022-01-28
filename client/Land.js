@@ -14,7 +14,7 @@ import {
   experimentalStyled,
 } from "@mui/material";
 import { connect } from "react-redux";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const mapStateToProps = (state) => {
   return {
@@ -46,7 +46,7 @@ function Land({ dispatch, currentUser, userList }) {
       type: "STORE_USER",
       payload: { username: enteredUsername },
     });
-    navigate("/dashboard")
+    navigate("/dashboard");
     console.log(currentUser);
   };
   return (
@@ -79,9 +79,7 @@ function Land({ dispatch, currentUser, userList }) {
                 setEnteredPassword(e.target.value);
               }}
             ></TextField>
-            {/* <Link to={passwordCorrect ? "/dashboard" : "/"}> */}
-              <Button onClick={(e) => onButtonClick(e)}>Login</Button>
-            {/* </Link> */}
+            <Button onClick={(e) => onButtonClick(e)}>Login</Button>
             <Button
               href="create-account"
               sx={{ display: "block", width: "40%" }}

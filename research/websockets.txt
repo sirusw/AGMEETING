@@ -9,6 +9,24 @@ WebSocket is better because we only make one connection, and then we can make as
 
 Need a server and a client, which connects to the server
 
+Enables communication between browser and server in real time through the use of websockets
+Has a Node.js server and a client side library 
+Implementations for the client side other languages as well, maintained by community 
+
+How it works
+Client attempts to establish websocket connection with server
+Falls back to http with long polling if this is not possible
+“Wrapper around the websocket API”
+It is NOT a websocket implementation 
+
+Has debugging utility 
+Works with popular testing frameworks, such as mocha and jest
+Typescript support
+
+We will most likely be utilizing the real time communication aspect of websocket functionality for many different aspects of AGMeeting, like the voting, chat, and potentially other applications. 
+
+Syntax is relatively simple, making use of events and callback functions. 
+
 
 SERVER
 
