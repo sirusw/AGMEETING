@@ -14,13 +14,11 @@ import {
   Popover,
   Typography,
 } from "@mui/material";
-// import useAuth from '../../hooks/useAuth';
 import CogIcon from "../../icons/Cog";
 import UserIcon from "../../icons/User";
 
 const AccountPopover = () => {
   const anchorRef = useRef(null);
-  // const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
@@ -35,7 +33,6 @@ const AccountPopover = () => {
   const handleLogout = async () => {
     try {
       handleClose();
-      // await logout();
       navigate("/");
     } catch (err) {
       console.error(err);
@@ -55,7 +52,6 @@ const AccountPopover = () => {
         }}
       >
         <Avatar
-          // src={user.avatar}
           sx={{
             height: 32,
             width: 32,
@@ -77,7 +73,6 @@ const AccountPopover = () => {
       >
         <Box sx={{ p: 2 }}>
           <Typography color="textPrimary" variant="subtitle2">
-            {/* {user.name} */}
             USER
           </Typography>
           <Typography color="textSecondary" variant="subtitle2">
