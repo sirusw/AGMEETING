@@ -12,6 +12,5 @@ End Time: 10:10am pst
 - Ife requested all the teams to just push what we have so far, regardless of quality or completeness
 - Adam showed off the styling issue to the meeting, Ife said to not worry about it for know and just focus on implementation
 - Told Ife about our upcoming presentation and that we’ll need more user tasks for it
-- Ife wants us to have most of the UI stuff done by Dec.10 
+- Ife wants us to have most of the UI stuff done by Dec.10
 - For the next portion of UI related stuff, we will be working with Redux. Ife told us to read up on it ahead of time
-

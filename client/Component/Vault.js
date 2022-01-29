@@ -18,12 +18,12 @@ const rows = [
     type: "Peldi",
     viewed: null,
   },
-  { 
-    id: 2, 
-    item: "Marco Botton Tuttofare", 
-    age: 38, 
-    type: null, 
-    viewed: null 
+  {
+    id: 2,
+    item: "Marco Botton Tuttofare",
+    age: 38,
+    type: null,
+    viewed: null,
   },
   {
     id: 3,
@@ -39,33 +39,42 @@ const rows = [
     type: "Val",
     viewed: null,
   },
-  { 
-    id: 5, 
-    item: "Data Grid Documents", 
-    age: null, 
-    type: null, 
-    viewed: null 
+  {
+    id: 5,
+    item: "Data Grid Documents",
+    age: null,
+    type: null,
+    viewed: null,
   },
-  { 
-    id: 6, 
-    item: "{65L", 
-    age: 0, 
-    type: "35", 
-    viewed: null 
+  {
+    id: 6,
+    item: "{65L",
+    age: 0,
+    type: "35",
+    viewed: null,
   },
 ];
 
 export default function Vault() {
-  return (  
-    <div style={{ display: 'flex', height: 400, width: '90%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[10]}
-        checkboxSelection
-        disableSelectionOnClick
-      />
-    </div>
+  return (
+    <Box
+      sx={{
+        backgroundColor: "primary",
+        p: 3,
+      }}
+    >
+      <Card>
+        <CardContent sx={{ height: "300px", backgroundColor: "white" }}>
+          <DataGrid
+            rows={rows}
+            columns={columns}
+            pageSize={10}
+            rowsPerPageOptions={[10]}
+            checkboxSelection
+            disableSelectionOnClick
+          />
+        </CardContent>
+      </Card>
+    </Box>
   );
 }

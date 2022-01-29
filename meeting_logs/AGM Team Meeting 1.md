@@ -4,7 +4,7 @@ Oct.4/21
 
 Start Time: 9:00am
 
-End Time: 9:14  am
+End Time: 9:14 am
 
 Attendees: Riley, Reid, Adam, Mason
 
@@ -23,7 +23,6 @@ Problems:
 - Material UI stuff
 - React, Node.js unfamiliarity
 - Don’t have a clear outline in mind yet
-
 
 **Plan**
 

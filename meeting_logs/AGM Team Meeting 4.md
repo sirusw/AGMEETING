@@ -4,11 +4,11 @@ Oct.27/21
 
 Start Time: 12:30pm
 
-End Time: 12:49pm 
+End Time: 12:49pm
 
 Attendees: Riley, Reid, Adam, Mason
 
-Absent: 
+Absent:
 
 **Project**
 
