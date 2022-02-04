@@ -1,10 +1,14 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const db = require("../config/db");
+const db = require("../../config/db");
 
 const Participant = db.define(
   "participant",
   {
     // Model attributes are defined here
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     meetingid: {
       type: DataTypes.INTEGER,
       allowNull: false,
