@@ -8,6 +8,7 @@ const Participant = db.define(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      primaryKey: true,
     },
     meetingid: {
       type: DataTypes.INTEGER,
