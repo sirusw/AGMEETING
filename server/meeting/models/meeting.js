@@ -1,20 +1,21 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const db = require("./config/db");
+const db = require("../../config/db");
 
-const Participant = db.define(
-  "participant",
+const Meeting = db.define(
+  "meeting",
   {
     // Model attributes are defined here
-    meetingid: {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+    },
+    modId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    password: {
-      type: DataTypes.STRING,
+    adminId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
@@ -25,6 +26,6 @@ const Participant = db.define(
 );
 
 // `sequelize.define` also returns the model
-console.log(Participant === db.models.Participant); // true
+console.log(Meeting === db.models.Meeting); // true
 
-module.exports = Participant;
+module.exports = Meeting;
