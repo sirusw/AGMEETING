@@ -28,7 +28,7 @@ import Scrollbar from "../../Scrollbar";
 import Modal from "../Interaction/Modal";
 // import { Receipt } from '@material-ui/icons';
 
-import Modal from './Interactions'
+//import Modal from './Interactions'
 const sections = [
   {
     title: "Tables",
