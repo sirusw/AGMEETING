@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link as RouterLink, useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
-import {
-  Avatar,
-  Box,
-  Button,
-  Divider,
-  Drawer,
-  Link,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import React, { useState, useEffect } from 'react';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Avatar, Box, Button, Divider, Drawer, Link, Typography, useMediaQuery } from '@mui/material';
 import { experimentalStyled } from "@mui/material";
 
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -37,6 +28,7 @@ import Scrollbar from "../../Scrollbar";
 import Modal from "../Interaction/Modal";
 // import { Receipt } from '@material-ui/icons';
 
+import Modal from './Interactions'
 const sections = [
   {
     title: "Tables",
@@ -254,6 +246,7 @@ const sections = [
   //     }
   //   ]
   // }
+
 ];
 
 const DashboardSidebar = (props) => {
@@ -261,6 +254,14 @@ const DashboardSidebar = (props) => {
   const location = useLocation();
   // const { user } = useAuth();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up("lg"));
+
+
+  useEffect(() => {
+    if (openMobile && onMobileClose) {
+      onMobileClose();
+    }
+  }, [location.pathname]);
+
   // Inter new
   const [isApplicationOpen, setIsApplicationOpen] = useState(false);
   // temp
@@ -272,11 +273,6 @@ const DashboardSidebar = (props) => {
     setIsApplicationOpen(false);
   };
 
-  useEffect(() => {
-    if (openMobile && onMobileClose) {
-      onMobileClose();
-    }
-  }, [location.pathname]);
 
   const content = (
     <Box
@@ -366,8 +362,26 @@ const DashboardSidebar = (props) => {
             to="/docs"
             variant="contained"
           >
+            Documentation
+          </Button> */}
+
+          <Button
+            color="primary"
+            onClick={handleApplyModalOpen}
+            fullWidth
+            sx={{ mt: 2 }}
+            to="#"
+            variant="contained"
+          >
             Interaction Panel
           </Button>
+          <Modal
+            // authorAvatar={project.author.avatar}
+            // authorName={project.author.name}
+            onApply={handleApplyModalClose}
+            onClose={handleApplyModalClose}
+            open={isApplicationOpen}
+          />
         </Box>
       </Scrollbar>
     </Box>
@@ -410,9 +424,9 @@ const DashboardSidebar = (props) => {
         open={openMobile}
         PaperProps={{
           sx: {
-            backgroundColor: "background.paper",
-            width: 280,
-          },
+            backgroundColor: 'background.paper',
+            width: 280
+          }
         }}
         variant="temporary"
       >

@@ -9,12 +9,12 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 // import MenuIcon from '../../icons/Menu';
 import MenuIcon from '../../icons/Menu';
-// import AccountPopover from './AccountPopover';
+import AccountPopover from './AccountPopover';
 // import ContactsPopover from './ContactsPopover';
 // import ContentSearch from './ContentSearch';
 // import LanguagePopover from './LanguagePopover';
 // import Logo from '../Logo';
-// import NotificationsPopover from './NotificationsPopover';
+import NotificationsPopover from './NotificationsPopover';
 
 const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
     ...(theme.palette.mode === 'light' && {
@@ -57,6 +57,9 @@ const NavBar = (props) => {
                     <MenuIcon fontSize="small" />
                 </IconButton>
                 <RouterLink to="/">
+                    <h1>
+                        AGMEETING
+                    </h1>
                     {/* <Logo
             sx={{
               display: {
@@ -82,10 +85,11 @@ const NavBar = (props) => {
                     {/* <ContactsPopover /> */}
                 </Box>
                 <Box sx={{ ml: 1 }}>
-                    {/* <NotificationsPopover /> */}
+                    <NotificationsPopover />
                 </Box>
-                
+
                 <Box sx={{ ml: 2 }}>
+                    <AccountPopover />
                     <div class="mui-dropdown">
                         <button id="basic-button"
                             aria-controls="basic-menu"
@@ -109,12 +113,12 @@ const NavBar = (props) => {
                             <MenuItem onClick={handleClose}>Bonjour， ca va?</MenuItem>
                         </Menu>
                     </div>
-                    
+
                 </Box>
                 <Box sx={{ ml: 1 }}>
                     {/* <AccountPopover /> */}
                 </Box>
-                
+
                 <ButtonGroup variant="contained" aria-label="outlined primary button group">
                     <Button href='/file'>File</Button>
                     <Button href='/edit'>Edit</Button>
