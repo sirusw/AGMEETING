@@ -8,6 +8,8 @@ const indexRoutes = require("./controllers/index.controller")
 const DIST_DIR = path.join(__dirname, "public");
 const HTML_FILE = path.join(DIST_DIR, "index.html");
 
+//db
+const db = require('../models');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
@@ -28,6 +30,12 @@ app.get("*", (req, res) => {
     // res.sendFile(path.join(__dirname + '/public/index.html'))
 });
 
-app.listen(port, () => {
-    console.log(`The app server is running on port: ${port}`);
-});
+db.sequelize.sync().then(() => {
+    app.listen(port, () => {
+        console.log(`The app server is running on port: ${port}`);
+    });
+})
+
+// app.listen(port, () => {
+//     console.log(`The app server is running on port: ${port}`);
+// });
