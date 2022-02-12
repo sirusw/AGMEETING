@@ -17,6 +17,7 @@ Progress:
 - During the meeting, we cleaned up the ER diagram a bit, and created a control flow diagram for Ife
 - The presentation for milestone 3 and 4 was cancelled in favor of a list of usability tasks
 - We’ve been asked by our client to each sign a license agreement this week
+- No requirements presentation, prof confirmed
 
 Problems:
 
