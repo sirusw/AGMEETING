@@ -1,25 +1,35 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const db = require("../../config/db");
 
-const Participant = db.define(
-  "participant",
+const Item = db.define(
+  "item",
   {
-    // Model attributes are defined here
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-    },
-    meetingid: {
+    meetingId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    email: {
+    issueNum: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    password: {
+    filepath: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    voteFor: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    voteAgainst: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    abstain: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
@@ -29,7 +39,6 @@ const Participant = db.define(
   }
 );
 
-// `sequelize.define` also returns the model
-console.log(Participant === db.models.Participant); // true
+console.log(Item === db.models.Item);
 
-module.exports = Participant;
+module.exports = Item;
