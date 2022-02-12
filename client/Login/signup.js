@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import validator from "validator";
 
 function Copyright(props) {
   return (
@@ -34,14 +35,24 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+  const [signupError, setSignupError] = React.useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    // make sure email is valid
+    if (!validator.isEmail(data.get("email"))) {
+      setSignupError("Enter valid Email!");
+      return;
+    }
+    // check passwords are matching
+    if (data.get("password") != data.get("passwordAgain")) {
+      setSignupError("Passwords must match");
+    } else {
+      setSignupError("");
+    }
+
+    //
   };
 
   return (
@@ -92,16 +103,23 @@ export default function SignUp() {
               margin="normal"
               required
               fullWidth
-              name="password"
+              name="passwordAgain"
               label="Enter Password again"
               type="password"
               id="passwordAgain"
               autoComplete="current-password"
             />
-
+            <span
+              margin="normal"
+              style={{
+                fontWeight: "bold",
+                color: "red",
+              }}
+            >
+              {signupError}
+            </span>
             <Button
               type="submit"
-              href="/"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
