@@ -1,11 +1,16 @@
-import { createStore } from "redux";
-import userReducer from "./reducers"
+import { applyMiddleware, compose, createStore } from "redux";
+import thunk from "redux-thunk";
+import userReducer from "./reducers";
 
-const initialState ={
-    userList:{},
-    currentUser:{
-        username: ""
-    }
-}
+const composedEnhancer = compose(
+  applyMiddleware(thunk),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-export default createStore(userReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const initialState = {
+  currentUser: {
+    username: "",
+  },
+};
+
+export default createStore(userReducer, initialState, composedEnhancer);
