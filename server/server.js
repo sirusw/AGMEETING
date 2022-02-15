@@ -1,6 +1,4 @@
 const express = require("express");
-const exphbs = require("express-handlebars");
-const bodyParser = require("body-parser");
 // var fallback = require('express-history-api-fallback')
 const app = express();
 const path = require("path");
@@ -10,15 +8,6 @@ const indexRoutes = require("./controllers/index.controller")
 const DIST_DIR = path.join(__dirname, "public");
 const HTML_FILE = path.join(DIST_DIR, "index.html");
 
-//Database
-const sequelize = require("../config/database.js");
-
-//client route
-app.use('/client', require('../routes/client'));
-//Test sequelize
-sequelize.authenticate()
-    .then(() => console.log('Database connected'))
-    .catch(err => console.log('Error: ' + err))
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
