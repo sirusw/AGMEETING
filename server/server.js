@@ -19,6 +19,8 @@ app.use('/client', require('../routes/client'));
 sequelize.authenticate()
     .then(() => console.log('Database connected'))
     .catch(err => console.log('Error: ' + err))
+//db
+const db = require('../models');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
@@ -39,6 +41,12 @@ app.get("*", (req, res) => {
     // res.sendFile(path.join(__dirname + '/public/index.html'))
 });
 
-app.listen(port, () => {
-    console.log(`The app server is running on port: ${port}`);
-});
+db.sequelize.sync().then(() => {
+    app.listen(port, () => {
+        console.log(`The app server is running on port: ${port}`);
+    });
+})
+
+// app.listen(port, () => {
+//     console.log(`The app server is running on port: ${port}`);
+// });
