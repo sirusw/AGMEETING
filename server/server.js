@@ -11,10 +11,17 @@ const HTML_FILE = path.join(DIST_DIR, "index.html");
 //db
 const db = require('../models');
 
+//passport
+const passport = require('passport');
+require('../config/passport');
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.static(path.join(__dirname, "../dist")));
 
+//passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // app.use(express.static("helper"));
 // app.use("/", indexRoutes)
@@ -34,7 +41,7 @@ db.sequelize.sync().then(() => {
     app.listen(port, () => {
         console.log(`The app server is running on port: ${port}`);
     });
-})
+});
 
 // app.listen(port, () => {
 //     console.log(`The app server is running on port: ${port}`);
