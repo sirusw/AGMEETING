@@ -35,6 +35,10 @@ try {
 //db
 const db = require("../models");
 
+//passport
+const passport = require("passport");
+require("../config/passport");
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.static(path.join(__dirname, "../dist")));
@@ -44,6 +48,9 @@ app.use("/moderators", moderatorController);
 app.use("/meetings", meetingController);
 app.use("/items", itemController);
 app.use("/admins", administratorController);
+//passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // app.use(express.static("helper"));
 // app.use("/", indexRoutes)
