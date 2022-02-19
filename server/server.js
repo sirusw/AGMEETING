@@ -21,17 +21,6 @@ const meetingController = require("./meeting/meeting-controller");
 
 const itemController = require("./item/item-controller");
 const administratorController = require("./admin/admin-controller");
-
-try {
-  db.authenticate().then(() => {
-    console.log("Connection has been established successfully.");
-    Participant.findAll().then((results) => {
-      console.log(results);
-    });
-  });
-} catch (error) {
-  console.error("Unable to connect to the database:", error);
-}
 //db
 const db = require("../models");
 
@@ -51,6 +40,17 @@ app.use("/admins", administratorController);
 //passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+try {
+  db.authenticate().then(() => {
+    console.log("Connection has been established successfully.");
+    Participant.findAll().then((results) => {
+      console.log(results);
+    });
+  });
+} catch (error) {
+  console.error("Unable to connect to the database:", error);
+}
 
 // app.use(express.static("helper"));
 // app.use("/", indexRoutes)

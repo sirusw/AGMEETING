@@ -1,6 +1,7 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const bcrypt = require("bcrypt");
+const Moderator = require("../server/moderator/models/Moderator");
 // middleware for  login endpoint
 /**
  * Look up user info in the request body and try to find corresponding use, then see if the
