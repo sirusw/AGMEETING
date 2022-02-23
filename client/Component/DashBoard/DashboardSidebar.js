@@ -8,27 +8,32 @@ import { experimentalStyled } from "@mui/material";
 // import ReceiptIcon from '@material-ui/icons/Receipt';
 // import useAuth from '../../hooks/useAuth';
 // ReceiptIcon
-import BriefcaseIcon from "../../icons/Briefcase";
-import CalendarIcon from "../../icons/Calendar";
-import ChartPieIcon from "../../icons/ChartPie";
-import ChartSquareBarIcon from "../../icons/ChartSquareBar";
-import ChatAltIcon from "../../icons/ChatAlt";
-import ClipboardListIcon from "../../icons/ClipboardList";
-import FolderOpenIcon from "../../icons/FolderOpen";
-import MailIcon from "../../icons/Mail";
-import ShareIcon from "../../icons/Share";
-import ShoppingBagIcon from "../../icons/ShoppingBag";
-import ShoppingCartIcon from "../../icons/ShoppingCart";
-import UserIcon from "../../icons/User";
-import UsersIcon from "../../icons/Users";
-import HomeIcon from "../../icons/Home";
-import Logo from "../../Logo";
-import NavSection from "../../NavSection";
-import Scrollbar from "../../Scrollbar";
-import Modal from "../Interaction/Modal";
+import BriefcaseIcon from '../../icons/Briefcase';
+import CalendarIcon from '../../icons/Calendar';
+import ChartPieIcon from '../../icons/ChartPie';
+import ChartSquareBarIcon from '../../icons/ChartSquareBar';
+import ChatAltIcon from '../../icons/ChatAlt';
+import ClipboardListIcon from '../../icons/ClipboardList';
+import FolderOpenIcon from '../../icons/FolderOpen';
+import MailIcon from '../../icons/Mail';
+import ShareIcon from '../../icons/Share';
+import ShoppingBagIcon from '../../icons/ShoppingBag';
+import ShoppingCartIcon from '../../icons/ShoppingCart';
+import UserIcon from '../../icons/User';
+import UsersIcon from '../../icons/Users';
+import Logo from '../../Logo';
+import NavSection from '../../NavSection';
+import Scrollbar from '../../Scrollbar';
 // import { Receipt } from '@material-ui/icons';
+import { connect } from "react-redux";
 
-//import Modal from './Interactions'
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.currentUser,
+  };
+};
+
+import Modal from "./Interactions";
 const sections = [
   {
     title: "Tables",
@@ -105,32 +110,32 @@ const sections = [
     title: "Management",
     items: [
       {
-        title: 'Users',
-        path: '/LoggedinUsers',
+        title: "Users",
+        path: "/LoggedinUsers",
         icon: <UsersIcon fontSize="small" />,
         children: [
           {
-            title: 'Logged In Users',
-            path: '/loggedinUsers'
+            title: "Logged In Users",
+            path: "/loggedinUsers",
           },
           {
-            title: 'Registered Users',
-            path: '/registeredusers'
+            title: "Registered Users",
+            path: "/registeredusers",
           },
           {
-            title: 'Stats',
-            path: '/stats'
+            title: "Stats",
+            path: "/stats",
           },
           // {
           //   title: 'Edit',
           //   path: '/dashboard/customers/1/edit'
           // }
-        ]
+        ],
       },
       {
-        title: 'General Settings',
-        path: '/settings',
-        icon: <ShoppingBagIcon fontSize="small" />
+        title: "General Settings",
+        path: "/settings",
+        icon: <ShoppingBagIcon fontSize="small" />,
       },
 
       // {
@@ -178,7 +183,7 @@ const sections = [
       //     }
       //   ]
       // }
-    ]
+    ],
   },
 
   // {
@@ -220,7 +225,6 @@ const sections = [
   //     }
   //   ]
   // },
-
   // {
   //   title: 'Apps',
   //   items: [
@@ -250,6 +254,7 @@ const sections = [
 ];
 
 const DashboardSidebar = (props) => {
+  console.log(props.currentUser);
   const { onMobileClose, openMobile } = props;
   const location = useLocation();
   // const { user } = useAuth();
@@ -257,6 +262,7 @@ const DashboardSidebar = (props) => {
 
 
   useEffect(() => {
+    console.log("here in sidebar");
     if (openMobile && onMobileClose) {
       onMobileClose();
     }
@@ -272,7 +278,6 @@ const DashboardSidebar = (props) => {
   const handleApplyModalClose = () => {
     setIsApplicationOpen(false);
   };
-
 
   const content = (
     <Box
@@ -313,20 +318,16 @@ const DashboardSidebar = (props) => {
               p: 2,
             }}
           >
-            <RouterLink to="/dashboard/account">
-              {/* <Avatar
-                src={user.avatar}
-                sx={{
-                  cursor: 'pointer',
-                  height: 48,
-                  width: 48
-                }}
-              /> */}
-              Avatar
-            </RouterLink>
+            <RouterLink to="/dashboard/account">Avatar</RouterLink>
             <Box sx={{ ml: 2 }}>
               <Typography color="textPrimary" variant="subtitle2">
-                {/* {user.name} */} User Name
+                {props.currentUser.username}
+              </Typography>
+              <Typography color="textSecondary" variant="body2">
+                Your plan:{" "}
+                <Link color="primary" component={RouterLink} to="/pricing">
+                  {props.currentUser.username}'s plan
+                </Link>
               </Typography>
             </Box>
           </Box>
@@ -354,16 +355,6 @@ const DashboardSidebar = (props) => {
           <Typography color="textSecondary" variant="body2">
             Check our docs
           </Typography>
-          <Button
-            color="primary"
-            onClick={handleApplyModalOpen}
-            fullWidth
-            sx={{ mt: 2 }}
-            to="/docs"
-            variant="contained"
-          >
-            Documentation
-          </Button> */}
 
           <Button
             color="primary"
@@ -376,8 +367,6 @@ const DashboardSidebar = (props) => {
             Interaction Panel
           </Button>
           <Modal
-            // authorAvatar={project.author.avatar}
-            // authorName={project.author.name}
             onApply={handleApplyModalClose}
             onClose={handleApplyModalClose}
             open={isApplicationOpen}
@@ -389,30 +378,21 @@ const DashboardSidebar = (props) => {
 
   if (lgUp) {
     return (
-      <>
-        <Drawer
-          anchor="left"
-          open
-          PaperProps={{
-            sx: {
-              backgroundColor: "background.paper",
-              height: "calc(100% - 64px) !important",
-              top: "64px !Important",
-              width: 280,
-            },
-          }}
-          variant="permanent"
-        >
-          {content}
-        </Drawer>
-        <Modal
-          // authorAvatar={project.author.avatar}
-          // authorName={project.author.name}
-          onApply={handleApplyModalClose}
-          onClose={handleApplyModalClose}
-          open={isApplicationOpen}
-        />
-      </>
+      <Drawer
+        anchor="left"
+        open
+        PaperProps={{
+          sx: {
+            backgroundColor: "background.paper",
+            height: "calc(100% - 64px) !important",
+            top: "64px !Important",
+            width: 280,
+          },
+        }}
+        variant="permanent"
+      >
+        {content}
+      </Drawer>
     );
   }
 
@@ -424,17 +404,15 @@ const DashboardSidebar = (props) => {
         open={openMobile}
         PaperProps={{
           sx: {
-            backgroundColor: 'background.paper',
-            width: 280
-          }
+            backgroundColor: "background.paper",
+            width: 280,
+          },
         }}
         variant="temporary"
       >
         {content}
       </Drawer>
       <Modal
-        // authorAvatar={project.author.avatar}
-        // authorName={project.author.name}
         onApply={handleApplyModalClose}
         onClose={handleApplyModalClose}
         open={isApplicationOpen}
@@ -448,4 +426,4 @@ DashboardSidebar.propTypes = {
   openMobile: PropTypes.bool,
 };
 
-export default DashboardSidebar;
+export default connect(mapStateToProps)(DashboardSidebar);
