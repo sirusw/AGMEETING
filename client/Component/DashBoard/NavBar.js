@@ -1,37 +1,49 @@
-import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { AppBar, Box, IconButton, Toolbar } from '@mui/material';
+import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+import PropTypes from "prop-types";
+import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import { experimentalStyled } from "@mui/material";
+import useSettings from "../../hooks/useSettings";
+import MenuIcon from "../../icons/Menu";
+import AccountPopover from "./AccountPopover";
+import NotificationsPopover from "./NotificationsPopover";
 import { Button, ButtonGroup } from '@mui/material';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 // import MenuIcon from '../../icons/Menu';
-import MenuIcon from '../../icons/Menu';
-import AccountPopover from './AccountPopover';
 // import ContactsPopover from './ContactsPopover';
 // import ContentSearch from './ContentSearch';
 // import LanguagePopover from './LanguagePopover';
 // import Logo from '../Logo';
-import NotificationsPopover from './NotificationsPopover';
 
 const DashboardNavbarRoot = experimentalStyled(AppBar)(({ theme }) => ({
-    ...(theme.palette.mode === 'light' && {
-        backgroundColor: theme.palette.primary.main,
-        boxShadow: 'none',
-        color: theme.palette.primary.contrastText
-    }),
-    ...(theme.palette.mode === 'dark' && {
-        backgroundColor: theme.palette.background.paper,
-        borderBottom: `1px solid ${theme.palette.divider}`,
-        boxShadow: 'none'
-    }),
-    zIndex: theme.zIndex.drawer + 100
+  ...(theme.palette.mode === "light" && {
+    backgroundColor: theme.palette.primary.main,
+    boxShadow: "none",
+    color: theme.palette.primary.contrastText,
+  }),
+  ...(theme.palette.mode === "dark" && {
+    backgroundColor: theme.palette.background.paper,
+    borderBottom: `1px solid ${theme.palette.divider}`,
+    boxShadow: "none",
+  }),
+  zIndex: theme.zIndex.drawer + 100,
+}));
+
+const StyledTypography = experimentalStyled(Typography)(({ theme }) => ({
+  ...(theme.palette.mode === "light" && {
+    color: theme.palette.primary.dark,
+  }),
+  ...(theme.palette.mode === "dark" && {
+    color: theme.palette.primary.light,
+  }),
+  zIndex: theme.zIndex.drawer + 100,
 }));
 
 const NavBar = (props) => {
-    const { onSidebarMobileOpen, ...other } = props;
+  const { onSidebarMobileOpen, ...other } = props;
+  const { settings } = useSettings();
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -132,7 +144,7 @@ const NavBar = (props) => {
 };
 
 NavBar.propTypes = {
-    onSidebarMobileOpen: PropTypes.func
+  onSidebarMobileOpen: PropTypes.func,
 };
 
 export default NavBar;
