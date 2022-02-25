@@ -4,47 +4,39 @@ const app = express();
 
 const path = require("path");
 const port = process.env.PORT || 3000;
+
 // import routes from "../client/routes";
 const indexRoutes = require("./controllers/index.controller");
 const DIST_DIR = path.join(__dirname, "public");
 const HTML_FILE = path.join(DIST_DIR, "index.html");
 
-const db = require("../models");
-
-const Participant = require("./participant/models/participant");
-
-const participantController = require("./participant/participant-controller");
-
-const moderatorController = require("./moderator/moderator-controller");
-
-const meetingController = require("./meeting/meeting-controller");
-
-const itemController = require("./item/item-controller");
-const administratorController = require("./admin/admin-controller");
+//controllers
+const clientController = require("./controllers/client-controller");
 
 //passport
 const passport = require("passport");
-require("../config/passport");
+require("./config/passport");
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.static(path.join(__dirname, "../dist")));
 
-app.use("/participants", participantController);
-app.use("/moderators", moderatorController);
-app.use("/meetings", meetingController);
-app.use("/items", itemController);
-app.use("/admins", administratorController);
-//passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+//database
+const db = require("./models/index");
+const client = require("./models/client");
+const allModels = require("./models/index");
+
+app.use("/clients", clientController);
 
 try {
   db.sequelize.authenticate().then(() => {
     console.log("Connection has been established successfully.");
-    Participant.findAll().then((results) => {
+    allModels.client.findAll().then((results) => {
       console.log(results);
-    });
+    }).catch(err => console.log(err));
   });
 } catch (error) {
   console.error("Unable to connect to the database:", error);
