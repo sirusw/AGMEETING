@@ -7,8 +7,7 @@
     "all": "npm-run-all --parallel dev:*",
     "dev:build-client": "webpack --config webpack.client.js --watch",
     "dev:start": "nodemon server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ife Ajibola",
   "license": "ISC",
@@ -65,6 +64,7 @@
     "pretty-quick": "^3.1.2",
     "prop-types": "^15.7.2",
     "sass-loader": "^12.1.0",
+    "sequelize-cli": "^6.4.1",
     "style-loader": "^3.3.0",
     "webpack": "^5.64.2",
     "webpack-cli": "^4.8.0"
