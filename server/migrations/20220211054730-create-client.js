@@ -3,7 +3,7 @@
 const {DataTypes, Sequelize} = require("sequelize");
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return queryInterface.createTable("clients", {
+    return queryInterface.createTable("client", {
       id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
