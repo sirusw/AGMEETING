@@ -17,11 +17,10 @@ import LoggedinUsers from "./Component/AdminComponents/LoggedInUsers";
 import RegisteredUsers from "./Component/AdminComponents/RegisteredUsers";
 import Stats from "./Component/AdminComponents/Stats/Stats";
 import Settings from "./Component/AdminComponents/Settings/Settings";
-import Login from "./Login/Login";
 
-import SignIn from "./Login/signin";
-import SignUp from "./Login/signup";
-import Index from "./Index";
+import SignIn from "./login/signin";
+import SignUp from "./login/signup";
+import LandingPage from "./LandingPage";
 
 // // Declarative routing model
 // return (
@@ -36,7 +35,7 @@ import Index from "./Index";
 const routes = [
   {
     path: "/",
-    element: <Index />
+    element: <LandingPage />
   },
   {
     path: "/about",

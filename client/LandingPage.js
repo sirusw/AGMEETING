@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 
-function Index() {
+function LandingPage() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -128,8 +128,8 @@ function Index() {
                     <Button sx={{ my: 2, color: 'white', display: 'block' }}>About</Button>
                 </Link>
                 <Link
-                    key="Login"
-                    to="/Login2"
+                    key="login"
+                    to="/login"
                 >
                     <Button sx={{ my: 2, color: 'white', display: 'block' }}>Login</Button>
                 </Link>
@@ -159,7 +159,7 @@ function Index() {
                 </Link>
                 <Link
                     key="login"
-                    to="/Login"
+                    to="/login"
                     
                 >
                     <Button sx={{ my: 2, color: 'white', display: 'block' }}>Login</Button>
@@ -172,5 +172,5 @@ function Index() {
   );
 }
 
-export default Index;
+export default LandingPage;
 
