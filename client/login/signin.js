@@ -12,6 +12,10 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import axios from "axios";
+import {useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
+import validator from "validator";
 
 function Copyright(props) {
   return (
@@ -33,15 +37,46 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
+export default function SignIn(effect, deps) {
+
+  const navigate = useNavigate();
+  const [token, setToken] = useState("")
+  const [signinError, setSigninError] = React.useState("");
+
+
+  useEffect(() => {
+    if (token) {
+      navigate("/dashboard");
+    }
+  }, [token]);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const email = data.get("email");
+    const password = data.get("password");
+
+    if (!validator.isEmail(data.get("email"))) {
+      setSigninError("Enter valid Email!");
+      return;
+    }
+    //const checkLogin = require("../../server/controllers/login.controller.function")
     // eslint-disable-next-line no-console
     console.log({
       email: data.get("email"),
       password: data.get("password"),
     });
+    await axios.post("http://localhost:3000/api/v1/login", {email, password})
+        .then(response => {
+          console.log(response);
+          setToken(response.data.token);
+          if (!response.data.token){
+            setSigninError("Email or password does not match");
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        })
   };
 
   return (
@@ -62,6 +97,15 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+          <span
+              margin="normal"
+              style={{
+                fontWeight: "bold",
+                color: "red",
+              }}
+          >
+              {signinError}
+            </span>
           <Box
             component="form"
             onSubmit={handleSubmit}
@@ -94,7 +138,7 @@ export default function SignIn() {
             />
             <Button
               type="submit"
-              href="/"
+              href=""
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}

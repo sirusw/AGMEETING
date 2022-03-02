@@ -136,7 +136,7 @@ const NavBar = (props) => {
                     <Button href='/edit'>Edit</Button>
                     <Button href='/view'>View</Button>
                     <Button href='/help'>Help</Button>
-                    <Button href='/signin'>Login</Button>
+                    <Button href='/login'>Login</Button>
                 </ButtonGroup>
             </Toolbar>
         </DashboardNavbarRoot>

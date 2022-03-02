@@ -21,6 +21,7 @@ import Login from "./Login/Login";
 
 import SignIn from "./Login/signin";
 import SignUp from "./Login/signup";
+import Index from "./Index";
 
 // // Declarative routing model
 // return (
@@ -35,31 +36,39 @@ import SignUp from "./Login/signup";
 const routes = [
   {
     path: "/",
+    element: <Index />
+  },
+  {
+    path: "/about",
+    element: <About />
+  },
+  {
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       { index: true, element: <GroupedList3 /> },
       {
-        path: "/agenda",
+        path: "agenda",
         element: <Agenda />,
       },
       {
-        path: "/vault",
+        path: "vault",
         element: <Vault />,
       },
       {
-        path: "/loggedinUsers",
+        path: "loggedinUsers",
         element: <LoggedinUsers />,
       },
       {
-        path: "/registeredusers",
+        path: "registeredusers",
         element: <RegisteredUsers />,
       },
       {
-        path: "/stats",
+        path: "stats",
         element: <Stats />,
       },
       {
-        path: "/settings",
+        path: "settings",
         element: <Settings />,
       },
 
@@ -68,10 +77,6 @@ const routes = [
   },
   {
     path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/login2",
     element: <SignIn />,
   },
   {

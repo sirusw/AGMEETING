@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import validator from "validator";
+import axios from "axios";
 
 function Copyright(props) {
   return (
@@ -37,22 +38,38 @@ const theme = createTheme();
 export default function SignUp() {
   const [signupError, setSignupError] = React.useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const email = data.get("email");
+    const password = data.get("password");
+    const passwordAgain = data.get("passwordAgain");
+
+    console.log({
+      email: email,
+      password: password,
+      passwordAgain: passwordAgain
+    })
     // make sure email is valid
     if (!validator.isEmail(data.get("email"))) {
       setSignupError("Enter valid Email!");
       return;
     }
     // check passwords are matching
-    if (data.get("password") != data.get("passwordAgain")) {
+    if (password != passwordAgain) {
       setSignupError("Passwords must match");
     } else {
       setSignupError("");
-    }
 
-    //
+      await axios.post("http://localhost:3000/api/v1/register", {email, password})
+          .then(response => {
+            console.log(response);
+            setSignupError("Successfully created your account, please go back to sign in page to continue");
+          })
+          .catch(error => {
+            console.log(error);
+          })
+    }
   };
 
   return (
@@ -126,6 +143,13 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
+            <Grid container>
+              <Grid item>
+                <Link href="/login" variant="body2">
+                  {"Finish registering? Log in"}
+                </Link>
+              </Grid>
+            </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
