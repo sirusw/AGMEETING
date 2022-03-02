@@ -46,7 +46,7 @@ export default function SignIn(effect, deps) {
 
     useEffect(() => {
         if (token) {
-            navigate("/dashboard");
+            navigate("/");
         }
     }, [token]);
 

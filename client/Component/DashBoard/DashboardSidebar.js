@@ -36,51 +36,6 @@ const mapStateToProps = (state) => {
 import Modal from "./Interactions";
 const sections = [
   {
-    title: "Tables",
-    items: [
-      {
-        title: "List of Users",
-        path: "/dashboard/table",
-        icon: <FolderOpenIcon fontSize="small" />,
-      },
-    ],
-  },
-  {
-    title: "Events",
-    items: [
-      {
-        title: "New Event",
-        path: "/dashboard/event-manage",
-        icon: <ClipboardListIcon fontSize="small" />,
-      },
-      {
-        title: "Event Management",
-        path: "/dashboard/list",
-        icon: <ClipboardListIcon fontSize="small" />,
-      },
-    ],
-  },
-  {
-    title: "Interaction",
-    items: [
-      {
-        title: "Send Messages",
-        path: "/dashboard/ContentMessage",
-        icon: <MailIcon fontSize="small" />,
-      },
-      {
-        title: "Chat",
-        path: "/dashboard/chat",
-        icon: <ChatAltIcon fontSize="small" />,
-      },
-      {
-        title: "Calendar",
-        path: "/dashboard/calendar",
-        icon: <CalendarIcon fontSize="small" />,
-      },
-    ],
-  },
-  {
     title: "General",
     items: [
       {

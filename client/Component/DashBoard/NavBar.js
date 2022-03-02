@@ -102,29 +102,6 @@ const NavBar = (props) => {
 
                 <Box sx={{ ml: 2 }}>
                     <AccountPopover />
-                    <div class="mui-dropdown">
-                        <button id="basic-button"
-                            aria-controls="basic-menu"
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleClick}>
-                            <NotificationsNoneIcon fontSize="large"/>
-                            <span class="mui-caret"></span>
-                        </button>
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            MenuListProps={{
-                            'aria-labelledby': 'basic-button',
-                            }}
-                        >
-                            <MenuItem onClick={handleClose}>Hi, there.</MenuItem>
-                            <MenuItem onClick={handleClose}>Hola, como estas?</MenuItem>
-                            <MenuItem onClick={handleClose}>Bonjour， ca va?</MenuItem>
-                        </Menu>
-                    </div>
 
                 </Box>
                 <Box sx={{ ml: 1 }}>

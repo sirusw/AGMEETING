@@ -17,6 +17,7 @@ import LoggedinUsers from "./Component/AdminComponents/LoggedInUsers";
 import RegisteredUsers from "./Component/AdminComponents/RegisteredUsers";
 import Stats from "./Component/AdminComponents/Stats/Stats";
 import Settings from "./Component/AdminComponents/Settings/Settings";
+import EventDetails from "./Component/DashBoard/Events/EventDetails";
 
 import SignIn from "./login/signin";
 import SignUp from "./login/signup";
@@ -34,7 +35,7 @@ import LandingPage from "./LandingPage";
 //Programmatic routing model this basically contains all the routes for the applications, new routes must be added to this array after the components are created.
 const routes = [
   {
-    path: "/",
+    path: "/index",
     element: <LandingPage />
   },
   {
@@ -42,32 +43,36 @@ const routes = [
     element: <About />
   },
   {
-    path: "/dashboard",
+    path: "/",
     element: <DashboardLayout />,
     children: [
       { index: true, element: <GroupedList3 /> },
       {
-        path: "agenda",
+        path: "/event-manage",
+        element: <EventDetails />,
+      },
+      {
+        path: "/agenda",
         element: <Agenda />,
       },
       {
-        path: "vault",
+        path: "/vault",
         element: <Vault />,
       },
       {
-        path: "loggedinUsers",
+        path: "/loggedinUsers",
         element: <LoggedinUsers />,
       },
       {
-        path: "registeredusers",
+        path: "/registeredusers",
         element: <RegisteredUsers />,
       },
       {
-        path: "stats",
+        path: "/stats",
         element: <Stats />,
       },
       {
-        path: "settings",
+        path: "/settings",
         element: <Settings />,
       },
 
