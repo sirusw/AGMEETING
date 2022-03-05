@@ -10,7 +10,6 @@ const DIST_DIR = path.join(__dirname, "public");
 const HTML_FILE = path.join(DIST_DIR, "index.html");
 
 //controllers
-const clientController = require("./controllers/client.controller");
 const indexController = require("./controllers/index.controller")
 
 //passport
