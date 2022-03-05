@@ -44,7 +44,6 @@ app.use(passport.session());
 const db = require("./models/db");
 const allModels = require("./models/db");
 
-app.use("/clients", clientController);
 app.use("/api/v1", indexController);
 
 // Test database
