@@ -24,12 +24,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //For handleBars
-const exphbs = require('express-handlebars');
-// app.set('views', "../views");
-// app.engine('hbs', exphbs.engine({
-//   extname: '.hbs'
-// }));
-// app.set('view engine', '.hbs');
 
 
 app.use(express.json());
@@ -42,10 +36,8 @@ app.use(passport.session());
 
 //database
 const db = require("./models/db");
-const client = require("./models/client");
 const allModels = require("./models/db");
 
-app.use("/clients", clientController);
 app.use("/api/v1", indexController);
 
 // Test database
