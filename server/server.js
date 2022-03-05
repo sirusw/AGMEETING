@@ -24,12 +24,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //For handleBars
-const exphbs = require('express-handlebars');
-// app.set('views', "../views");
-// app.engine('hbs', exphbs.engine({
-//   extname: '.hbs'
-// }));
-// app.set('view engine', '.hbs');
 
 
 app.use(express.json());
