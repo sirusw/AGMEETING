@@ -42,7 +42,6 @@ app.use(passport.session());
 
 //database
 const db = require("./models/db");
-const client = require("./models/client");
 const allModels = require("./models/db");
 
 app.use("/clients", clientController);
