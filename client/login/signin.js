@@ -17,6 +17,8 @@ import {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import validator from "validator";
 
+import {authenticationService} from "../../server/services/authentication.service";
+
 function Copyright(props) {
     return (
         <Typography
@@ -43,13 +45,6 @@ export default function SignIn(effect, deps) {
     const [token, setToken] = useState("")
     const [signinError, setSigninError] = React.useState("");
 
-
-    useEffect(() => {
-        if (token) {
-            navigate("/");
-        }
-    }, [token]);
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -60,23 +55,16 @@ export default function SignIn(effect, deps) {
             setSigninError("Enter valid Email!");
             return;
         }
-        //const checkLogin = require("../../server/controllers/login.controller.function")
-        // eslint-disable-next-line no-console
-        console.log({
-            email: data.get("email"),
-            password: data.get("password"),
-        });
-        await axios.post("http://localhost:3000/api/v1/login", {email, password})
-            .then(response => {
-                console.log(response);
-                setToken(response.data.token);
-                if (!response.data.token){
+        await authenticationService.login(email, password)
+            .then(
+                user => {
+                    navigate("/");
+                },
+                error => {
                     setSigninError("Email or password does not match");
                 }
-            })
-            .catch(error => {
-                console.log(error);
-            })
+            );
+
     };
 
     return (
