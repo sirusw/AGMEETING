@@ -11,6 +11,7 @@ if (user === "undefined"){
 else{
     currentUserSubject = new BehaviorSubject(JSON.parse(user));
 }
+
 export const authenticationService = {
     login,
     logout,
