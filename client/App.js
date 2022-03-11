@@ -20,13 +20,14 @@ import useSettings from "./hooks/useSettings";
 
 // Service
 import {authenticationService} from "../server/services/authentication.service";
-import {Navigate, useNavigate} from "react-router-dom";
+import {Navigate, useNavigate, useLocation} from "react-router-dom";
 
 
 function App() {
 
   const { settings } = useSettings();
   const navigate = useNavigate();
+  const location = useLocation();
   const [userStates, setUserStates] = useState({
     currentUser: null,
     role: ''
@@ -56,7 +57,12 @@ function App() {
 
     if (currentUser == null) {
       // not logged in so redirect to login page with the return url
-      navigate("/login");
+      
+      if(location.pathname === "/signup" || location.pathname ==="/index"){}
+        
+      else {
+        navigate("/login");
+      }
     }
   } ,[]);
 
