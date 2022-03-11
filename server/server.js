@@ -37,6 +37,7 @@ app.use(passport.session());
 const db = require("./models/db");
 const allModels = require("./models/db");
 
+// backend api
 app.use("/api/v1", indexController);
 
 // Test database
@@ -64,6 +65,14 @@ app.get("*", (req, res) => {
   // do not use this
   // res.sendFile(path.join(__dirname + '/public/index.html'))
 });
+
+// app.get(
+//     '/settings',
+//     passport.authenticate('jwt', { failureRedirect: '/login', failureMessage: true }),
+//     function(req, res) {
+//       res.redirect('/~' + req.user.username);
+//     }
+// )
 
 db.sequelize.sync().then(() => {
   app.listen(port, () => {
