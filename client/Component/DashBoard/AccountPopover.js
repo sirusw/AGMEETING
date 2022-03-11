@@ -25,6 +25,8 @@ const AccountPopover = () => {
 
   // Get user's name for display
   const currentUser = authenticationService.currentUserValue;
+  //TO DO: create a method to retrieve currentUserValue and return error if currentUserValue is null
+
   const handleOpen = () => {
     setOpen(true);
   };
