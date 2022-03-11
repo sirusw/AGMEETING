@@ -16,12 +16,15 @@ import {
 } from "@mui/material";
 import CogIcon from "../../icons/Cog";
 import UserIcon from "../../icons/User";
+import {authenticationService} from "../../../server/services/authentication.service";
 
 const AccountPopover = () => {
   const anchorRef = useRef(null);
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
+  // Get user's name for display
+  const currentUser = authenticationService.currentUserValue;
   const handleOpen = () => {
     setOpen(true);
   };
@@ -32,8 +35,8 @@ const AccountPopover = () => {
 
   const handleLogout = async () => {
     try {
-      handleClose();
-      navigate("/");
+      authenticationService.logout();
+      navigate("/login");
     } catch (err) {
       console.error(err);
       toast.error("Unable to logout.");
@@ -56,6 +59,8 @@ const AccountPopover = () => {
             height: 32,
             width: 32,
           }}
+          alt={currentUser.client_name}
+          src='../../../misc/img.png'
         />
       </Box>
       <Popover
@@ -73,10 +78,13 @@ const AccountPopover = () => {
       >
         <Box sx={{ p: 2 }}>
           <Typography color="textPrimary" variant="subtitle2">
-            USER
+            User: {currentUser.client_name}
           </Typography>
           <Typography color="textSecondary" variant="subtitle2">
-            Devias
+            Email : {currentUser.email}
+          </Typography>
+          <Typography color="textSecondary" variant="subtitle2">
+            Role : {currentUser.role}
           </Typography>
         </Box>
         <Divider />

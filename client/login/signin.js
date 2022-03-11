@@ -85,6 +85,10 @@ export default function SignIn(effect, deps) {
                     <Typography component="h1" variant="h5">
                         Sign in
                     </Typography>
+                    <div className="alert alert-info">
+                        <strong>Normal User</strong> - Email: 2@gmail.com | Password: p1<br />
+                        <strong>Administrator</strong> - Email: 1@gmail.com | Password: p1
+                    </div>
                     <span
                         margin="normal"
                         style={{

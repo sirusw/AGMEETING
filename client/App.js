@@ -28,7 +28,10 @@ function App() {
 
   const { settings } = useSettings();
   const navigate = useNavigate();
-
+  const [userStates, setUserStates] = useState({
+    currentUser: null,
+    role: ''
+  });
   const theme = createCustomTheme({
     direction: settings.direction,
     responsiveFontSizes: settings.responsiveFontSizes,
@@ -38,9 +41,20 @@ function App() {
 
   const content = useRoutes(Routes);
 
-  useEffect(() => {
-    const currentUser = authenticationService.currentUserValue;
+  useEffect(async () => {
+    const currentUser = await authenticationService.currentUserValue;
+    try {
+       setUserStates({
+        currentUser: currentUser,
+        role: currentUser.role
+      });
+    }
+    catch (err) {
+      console.log('error in setUserStates')
+    }
+
     console.log(currentUser);
+
     if (currentUser == null) {
       // not logged in so redirect to login page with the return url
       navigate("/login");

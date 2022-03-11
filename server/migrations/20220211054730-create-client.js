@@ -24,6 +24,11 @@ module.exports = {
       company_id: {
         type: Sequelize.STRING,
       },
+      role: {
+        type: DataTypes.ENUM({
+          values: ['admin', 'moderator', 'user']
+        }),
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
