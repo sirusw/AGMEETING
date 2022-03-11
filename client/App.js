@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 // import { ThemeProvider } from '@mui/material/styles';
+import { createBrowserHistory } from 'history';
 
 //Routes
 import Routes from "./routes";
 // import routes from './routes'
 import { useRoutes } from "react-router";
-import { connect } from "react-redux";
+import {redirectLogin} from "../server/routes/redirectLogin";
 
 //Material UI
 import { ThemeProvider } from "@mui/material/styles";
@@ -18,18 +19,15 @@ import { THEMES } from "../config/theme/constants";
 import ErrorBoundary from "./Errorbound";
 import useSettings from "./hooks/useSettings";
 
-const mapStateToProps = (state) => {
-  return {
-    currentUser: state.currentUser,
-  };
-};
+// Service
+import {authenticationService} from "../server/services/authentication.service";
+import {Navigate, useNavigate} from "react-router-dom";
 
-function App({ currentUser }) {
+
+function App() {
+
   const { settings } = useSettings();
-
-  // const theme = createCustomTheme({
-  //     theme: THEMES.LIGHT
-  // });
+  const navigate = useNavigate();
 
   const theme = createCustomTheme({
     direction: settings.direction,
@@ -41,9 +39,14 @@ function App({ currentUser }) {
   const content = useRoutes(Routes);
 
   useEffect(() => {
-    console.log("app.js");
+    const currentUser = authenticationService.currentUserValue;
     console.log(currentUser);
-  });
+    if (currentUser == null) {
+      // not logged in so redirect to login page with the return url
+      navigate("/login");
+    }
+  } ,[]);
+
   //This component basically contains the content for the entire application, wraps it in the theme provider.
   return (
     <ErrorBoundary>
@@ -61,4 +64,4 @@ function App({ currentUser }) {
   );
 }
 
-export default connect(mapStateToProps)(App);
+export default App;

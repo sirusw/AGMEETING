@@ -209,7 +209,6 @@ const sections = [
 ];
 
 const DashboardSidebar = (props) => {
-  console.log(props.currentUser);
   const { onMobileClose, openMobile } = props;
   const location = useLocation();
   // const { user } = useAuth();
@@ -217,7 +216,6 @@ const DashboardSidebar = (props) => {
 
 
   useEffect(() => {
-    console.log("here in sidebar");
     if (openMobile && onMobileClose) {
       onMobileClose();
     }
