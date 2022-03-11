@@ -3,7 +3,14 @@ import { BehaviorSubject } from 'rxjs';
 import { handleResponse } from '../helpers/handle-response';
 import axios from "axios";
 
-const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
+const user = localStorage.getItem('currentUser');
+let currentUserSubject;
+if (user === "undefined"){
+    currentUserSubject = new BehaviorSubject();
+}
+else{
+    currentUserSubject = new BehaviorSubject(JSON.parse(user));
+}
 
 export const authenticationService = {
     login,

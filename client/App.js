@@ -6,7 +6,6 @@ import { createBrowserHistory } from 'history';
 import Routes from "./routes";
 // import routes from './routes'
 import { useRoutes } from "react-router";
-import {redirectLogin} from "../server/routes/redirectLogin";
 
 //Material UI
 import { ThemeProvider } from "@mui/material/styles";
