@@ -58,10 +58,12 @@ export default function SignIn(effect, deps) {
         await authenticationService.login(email, password)
             .then(
                 user => {
-                    navigate("/");
-                },
-                error => {
-                    setSigninError("Email or password does not match");
+                    if(user){
+                        navigate("/");
+                    }
+                    else{
+                        setSigninError("User or email does not match!");
+                    }
                 }
             );
 
