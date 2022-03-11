@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as RouterLink } from "react-router-dom";
+import {Link as RouterLink, useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
 import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import { experimentalStyled } from "@mui/material";
@@ -11,6 +11,8 @@ import { Button, ButtonGroup } from '@mui/material';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+//import {logOut} from "../../login/logout";
+import {authenticationService} from "../../../server/services/authentication.service";
 // import MenuIcon from '../../icons/Menu';
 // import ContactsPopover from './ContactsPopover';
 // import ContentSearch from './ContentSearch';
@@ -45,6 +47,7 @@ const NavBar = (props) => {
   const { onSidebarMobileOpen, ...other } = props;
   const { settings } = useSettings();
 
+    const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -53,6 +56,11 @@ const NavBar = (props) => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const logOut = () => {
+        authenticationService.logout();
+        navigate("/login");
+    }
 
     return (
         <DashboardNavbarRoot {...other}>
@@ -113,7 +121,7 @@ const NavBar = (props) => {
                     <Button href='/edit'>Edit</Button>
                     <Button href='/view'>View</Button>
                     <Button href='/help'>Help</Button>
-                    <Button href='/login'>Login</Button>
+                    <Button onClick={ () => logOut()} href='/login'>Logout</Button>
                 </ButtonGroup>
             </Toolbar>
         </DashboardNavbarRoot>
