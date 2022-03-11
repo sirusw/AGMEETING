@@ -1,23 +1,14 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('usermeetingjunctions', {
+    await queryInterface.createTable('meeting', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      meeting_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model:{
-            tableName: 'meeting'
-          },
-          key: 'id'
-        }
-      },
-      user_id: {
+      moderator_id: {
         type: Sequelize.INTEGER,
         references: {
           model:{
@@ -25,6 +16,18 @@ module.exports = {
           },
           key: 'id'
         }
+      },
+      admin_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model:{
+            tableName: 'client'
+          },
+          key: 'id'
+        }
+      },
+      time_start: {
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +40,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('usermeetingjunctions');
+    await queryInterface.dropTable('meeting');
   }
 };

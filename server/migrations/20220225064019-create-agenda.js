@@ -1,30 +1,42 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('usermeetingjunctions', {
+    await queryInterface.createTable('agenda', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      id: {
+        type: Sequelize.STRING
+      },
       meeting_id: {
         type: Sequelize.INTEGER,
         references: {
           model:{
-            tableName: 'meeting'
+            tableName: 'company'
           },
           key: 'id'
         }
       },
-      user_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model:{
-            tableName: 'client'
-          },
-          key: 'id'
-        }
+      item_name: {
+        type: Sequelize.STRING
+      },
+      file_loc: {
+        type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.STRING
+      },
+      vote_for: {
+        type: Sequelize.INTEGER
+      },
+      vote_against: {
+        type: Sequelize.INTEGER
+      },
+      abstain: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +49,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('usermeetingjunctions');
+    await queryInterface.dropTable('agenda');
   }
 };
