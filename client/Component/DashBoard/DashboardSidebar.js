@@ -30,7 +30,8 @@ import { connect } from "react-redux";
 import Modal from "./Interactions";
 import {authenticationService} from "../../../server/services/authentication.service";
 import Paper from "@mui/material/Paper";
-const sections = [
+const currentUser = authenticationService.currentUserValue;
+const sectionsAdmin = [
   {
     title: "General",
     items: [
@@ -204,6 +205,29 @@ const sections = [
 
 ];
 
+const sectionsClient = [
+  {
+    title: "General",
+    items: [
+      {
+        title: "Session",
+        path: "/",
+        icon: <ChartSquareBarIcon fontSize="small" />,
+      },
+      {
+        title: "Agenda",
+        path: "/agenda",
+        icon: <ChartPieIcon fontSize="small" />,
+      },
+      {
+        title: "Vault",
+        path: "/Vault",
+        icon: <ShoppingBagIcon fontSize="small" />,
+      },
+    ]
+  }
+];
+
 const DashboardSidebar = (props) => {
   const { onMobileClose, openMobile } = props;
   const location = useLocation();
@@ -285,18 +309,33 @@ const DashboardSidebar = (props) => {
         </Box>
         <Divider />
         <Box sx={{ p: 2 }}>
-          {sections.map((section) => (
-            <NavSection
-              key={section.title}
-              pathname={location.pathname}
-              sx={{
-                "& + &": {
-                  mt: 3,
-                },
-              }}
-              {...section}
-            />
-          ))}
+          {currentUser.role === "admin" || currentUser.role === "moderator" ?
+              sectionsAdmin.map((section) => (
+                <NavSection
+                  key={section.title}
+                  pathname={location.pathname}
+                  sx={{
+                    "& + &": {
+                      mt: 3,
+                    },
+                  }}
+                  {...section}
+                />
+              ))
+              : sectionsClient.map((section) => (
+                <NavSection
+                  key={section.title}
+                  pathname={location.pathname}
+                  sx={{
+                    "& + &": {
+                      mt: 3,
+                    },
+                  }}
+                  {...section}
+                />
+              ))
+          
+          }
         </Box>
         <Divider />
         <Box sx={{ p: 2 }}>
