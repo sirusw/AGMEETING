@@ -27,13 +27,9 @@ import Scrollbar from '../../Scrollbar';
 // import { Receipt } from '@material-ui/icons';
 import { connect } from "react-redux";
 
-const mapStateToProps = (state) => {
-  return {
-    currentUser: state.currentUser,
-  };
-};
-
 import Modal from "./Interactions";
+import {authenticationService} from "../../../server/services/authentication.service";
+import Paper from "@mui/material/Paper";
 const sections = [
   {
     title: "General",
@@ -213,7 +209,7 @@ const DashboardSidebar = (props) => {
   const location = useLocation();
   // const { user } = useAuth();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up("lg"));
-
+  const currentUser = authenticationService.currentUserValue;
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
@@ -271,15 +267,17 @@ const DashboardSidebar = (props) => {
               p: 2,
             }}
           >
-            <RouterLink to="/dashboard/account">Avatar</RouterLink>
+            <RouterLink to="/dashboard/account">
+              <Avatar alt={currentUser.client_name} src='../../../misc/img.png' />
+            </RouterLink>
             <Box sx={{ ml: 2 }}>
               <Typography color="textPrimary" variant="subtitle2">
-                {props.currentUser.username}
+                 Welcome back {currentUser.client_name} !
               </Typography>
               <Typography color="textSecondary" variant="body2">
                 Your plan:{" "}
                 <Link color="primary" component={RouterLink} to="/pricing">
-                  {props.currentUser.username}'s plan
+                  6 months
                 </Link>
               </Typography>
             </Box>
@@ -379,4 +377,4 @@ DashboardSidebar.propTypes = {
   openMobile: PropTypes.bool,
 };
 
-export default connect(mapStateToProps)(DashboardSidebar);
+export default DashboardSidebar;

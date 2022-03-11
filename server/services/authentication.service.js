@@ -24,7 +24,7 @@ function login(email, password) {
         .then(response => {
             // store user details and jwt token in local storage to keep user logged in between page refresh
             const user = response.data['user']
-            const jwtToken = response.data['user']
+            const jwtToken = response.data['token']
 
             localStorage.setItem('currentUser', JSON.stringify(user));
             currentUserSubject.next(user);
